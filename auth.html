@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<!--[if lt IE 9]>
+    	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    	<![endif]-->
+
+    	<title>Entsorger Portal Authentifizierung by interseroh</title>
+
+    	<meta name="description" content="Source code generated using layoutit.com">
+    	<meta name="author" content="LayoutIt!">
+
+    	<link href="css/bootstrap.min.css" rel="stylesheet">
+    	<link href="css/style.css" rel="stylesheet">
+    	<link href="css/github-light.css" rel="stylesheet">
+
+  	</head>
+	<body>
+
+    	<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<nav class="navbar navbar-default fixed-nav-bar" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+							</button>
+							<!-- <a class="navbar-brand" href="#">  -->
+								<img border="0" alt="Interseroh" src="images/interseroh.png" width="100px" style="margin-top: 10px">
+							<!-- </a>  -->
+						</div>
+				
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav navbar-right">
+								<li>
+									<a class="navitem" href="index.html">Home</a>
+								</li>
+								<li>
+									<a class="navitem" href="api.html">API</a>
+								</li>
+								<li class="active">
+									<a class="navitem" href="#">Blog</a>
+								</li>
+								<li>
+									<a class="navitem" href="support.html">Support</a>
+								</li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+			<div class="row" style="padding-top: 1.5em;">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="col-md-3">
+						</div>
+						<div class="col-md-9">
+							<h2>Entsorger Portal Authentifizierung</h2>
+							<br />
+							<a href="#Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-1.AnforderneinesOAuthToken" class="toc-link">
+								1. Anfordern eines OAuth Token
+							</a>
+							<ul style="">
+								<li>
+									<span class="toc-item-body" data-outline="1.1">
+										<a href="#Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-AnfrageAccessToken" class="toc-link">
+											Anfrage Access Token
+										</a>
+									</span>
+								</li>
+								<li>
+									<span class="toc-item-body" data-outline="1.2">
+										<a href="#Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-CURL-Befehl" class="toc-link">
+											CURL-Befehl
+										</a>
+									</span>
+								</li>
+								<li>
+									<span class="toc-item-body" data-outline="1.3">
+										<a href="#Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-AntwortmitAccessToken" class="toc-link">
+											Antwort mit Access Token
+										</a>
+									</span>
+								</li>
+								<li>
+									<span class="toc-item-body" data-outline="1.4">
+										<a href="#Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-ErrorAnfrageAccessToken" class="toc-link">
+											Error Anfrage Access Token
+										</a>
+									</span>
+								</li>
+							</ul>
+							<a href="#Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-2.AnsprechenderAPI-SchnittstellederBestelldaten" class="toc-link">
+								2. Ansprechen der API-Schnittstelle der Bestelldaten
+							</a>
+							<ul style="">
+								<li>
+									<span class="toc-item-body" data-outline="2.1">
+										<a href="#Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-Anfrage" class="toc-link">
+											Anfrage
+										</a>
+									</span>
+								</li>
+								<li>
+									<span class="toc-item-body" data-outline="2.2">
+										<a href="#Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-CURL-Befehl.1" class="toc-link">
+											CURL-Befehl
+										</a>
+									</span>
+								</li>
+								<li>
+									<span class="toc-item-body" data-outline="2.3">
+										<a href="#Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-Antwort" class="toc-link">
+											Antwort
+										</a>
+									</span>
+								</li>
+								<li>
+									<span class="toc-item-body" data-outline="2.4">
+										<a href="#Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-ErrorAnfrage" class="toc-link">
+											Error Anfrage
+										</a>
+									</span>
+								</li>
+							</ul>
+							<hr />
+							<br />
+							<h3 id="Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-1.AnforderneinesOAuthToken">1. Anfordern eines OAuth Token</h3>
+							<ul>
+								<li>Location:
+									<ul>
+										<li>
+											<span>
+												Direct:&nbsp;
+											</span>
+											<a href="https://host:8443/oauth/token" class="external-link" rel="nofollow">https://host:8443/oauth/token</a>
+											<span>
+												&nbsp;
+											</span>
+										</li>
+										<li>
+											<span>Proxy:&nbsp;
+												<a href="https://host/oauth/token" class="external-link" rel="nofollow">https://host/oauth/token</a>
+											</span>
+										</li>
+									</ul>
+									</li>
+									<li>
+										Für weitere Informationen zu OAuth 2.0 siehe&nbsp;
+										<a href="https://tools.ietf.org/html/rfc6749" class="external-link" rel="nofollow">https://tools.ietf.org/html/rfc6749</a>
+									</li>
+									<li>
+										Das OAuth 2 Access-Token wird beim Aufruf des Bestelldaten-Services benötigt.
+										<ul>
+											<li>
+												Für Authorization Basic: user --&gt; client_id und password --&gt; client_secret. <strong>Achtung:</strong> 
+												<br />
+												<ul>
+													<li>
+														"<strong>YmVjbzpiZWNvMjAxNQ==</strong>"
+														<span class="s1">
+															ist dabei der Base64-kodierte String '<strong>beco:beco2015</strong>‘, also die <strong>client_id</strong> '
+															<span class="s1">
+																beco
+															</span>
+															’und das <strong>client_secret</strong> ‘
+															<span class="s1">
+																beco2015
+															</span>
+															’ durch ein ‘<strong>:</strong>’ getrennt.
+														</span>
+													</li>
+												</ul>
+												</li>
+												<li>
+													Für die Authentifizierung am OAuth-Server verwenden wir 'Password-Credentials' als Grant-Type (Benutzername und verschlüsseltes Passwort von Oracle E-Business Suite bzw. iSupplier). Beispiel Authentifizierungsdaten:
+													<br />
+													<ul>
+														<li>
+															User: <strong>Benutzername aus dem iSupplier</strong>
+															<br />
+														</li>
+														<li>
+															Verschlüsseltes Password: <strong>PASS (ACHTUNG: Verschlüsseltes Passwort!)</strong>
+														</li>
+													</ul>
+												</li>
+											</li>
+										</ul>
+									</li>
+								</li>
+							</ul>
+							<br />
+							<h4 class="p1" id="Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-AnfrageAccessToken">
+								<span class="s1">
+									Anfrage Access Token
+								</span>
+							</h4>
+							<div class="code panel pdl conf-macro output-block" style="border-width: 1px;" data-hasbody="true" data-macro-name="code">
+								<div class="codeContent panelContent pdl">
+									<div>
+										<div id="highlighter_553718" class="syntaxhighlighter sh-confluence nogutter  java">
+											<table cellspacing="0" cellpadding="0" class="codetable">
+												<tbody>
+													<tr>
+														<td class="code">
+															<div class="codecontainer" title="Hint: double-click to select code">
+																<div class="line number1 index0 alt2">
+																	<code class="java plain">
+																		https://host:8443/oauth/token
+																	</code>
+																</div>
+																<div class="line number2 index1 alt1">
+																	<code class="java spaces">
+																		&nbsp;
+																	</code>
+																	&nbsp;
+																</div>
+																<div class="line number3 index2 alt2">
+																	<code class="java plain">
+																		POST / HTTP/1.1
+																	</code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java plain">
+																		Host: server.example.com
+																	</code>
+																</div>
+																<div class="line number5 index4 alt2">
+																	<code class="java plain">
+																		Authorization: Basic YmVjbzpiZWNvMjAxNQ==
+																	</code>
+																</div>
+																<div class="line number6 index5 alt1">
+																	<code class="java plain">
+																		Content-Type: application/x-www-form-urlencoded
+																	</code>
+																</div>
+																<div class="line number7 index6 alt2">
+																	<code class="java plain">
+																		grant_type=password&amp;username=user&amp;password=pass
+																	</code>
+																</div>
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h4 id="Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-CURL-Befehl">CURL-Befehl</h4>
+							<div class="code panel pdl conf-macro output-block" style="border-width: 1px;" data-hasbody="true" data-macro-name="code">
+								<div class="codeContent panelContent pdl">
+									<div>
+										<div id="highlighter_5354" class="syntaxhighlighter sh-confluence nogutter  bash">
+											<table cellspacing="0" cellpadding="0" class="codetable">
+												<tbody>
+													<tr>
+														<td class="code">
+															<div class="codecontainer" title="Hint: double-click to select code">
+																<div class="line number1 index0 alt2">
+																	<code class="bash plain">
+																		curl -H 
+																	</code>
+																	<code class="bash string">
+																		"Authorization: Basic YmVjbzpiZWNvMjAxNQ==" --form "grant_type=password" --form "username=user" --form "password=pass" https://host/oauth/token
+																	</code> 
+																</div>
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h4 class="p1" id="Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-AntwortmitAccessToken">
+								Antwort mit Access Token
+							</h4>
+							<div class="code panel pdl conf-macro output-block" style="border-width: 1px;" data-hasbody="true" data-macro-name="code">
+								<div class="codeContent panelContent pdl">
+									<div>
+										<table cellspacing="0" cellpadding="0" class="codetable">
+											<tbody>
+												<tr>
+													<td class="code">
+														<div class="codecontainer" title="Hint: double-click to select code">
+															<div class="line number1 index0 alt2">
+																<code class="java plain">
+																	HTTP/1.1 200 OK
+																</code>
+															</div>
+															<div class="line number2 index1 alt1">
+																<code class="java plain">
+																	Content-Type: application/json;charset=UTF-8
+																</code>
+															</div>
+															<div class="line number3 index2 alt2">
+																<code class="java plain">
+																	Cache-Control: no-store
+																</code>
+															</div>
+															<div class="line number4 index3 alt1">
+																<code class="java plain">
+																	Pragma: no-cache 
+																</code>
+															</div>
+															<div class="line number5 index4 alt2">
+																<code class="java plain">
+																	{
+																</code>
+															</div>
+															<div class="line number6 index5 alt1">
+																<code class="java spaces">
+																	&nbsp;&nbsp;&nbsp;&nbsp;
+																</code>
+																<code class="java string">
+																	"access_token":"feefdae9-61ef-434a-8e0c-85eab2dcb02a",
+																</code>
+															</div>
+															<div class="line number7 index6 alt2">
+																<code class="java spaces">
+																	&nbsp;&nbsp;&nbsp;&nbsp;
+																</code>
+																<code class="java string">
+																	"token_type":"bearer",
+																</code>
+															</div>
+															<div class="line number8 index7 alt1">
+																<code class="java spaces">
+																	&nbsp;&nbsp;&nbsp;&nbsp;
+																</code>
+																<code class="java string">
+																	"expires_in":1800,
+																</code>
+															</div>
+															<div class="line number9 index8 alt2">
+																<code class="java spaces">
+																	&nbsp;&nbsp;&nbsp;&nbsp;
+																</code>
+																<code class="java string">
+																	"refresh_token":"a7d6d617-cc39-4379-bceb-55cc4a3a8412"
+																</code>
+															</div>
+															<div class="line number10 index9 alt1">
+																<code class="java plain">
+																	}
+																</code>
+															</div>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										<p class="p1">
+											Falls die Zugangsdaten des Benutzers fehlerhaft sind, wird eine Fehler-Nachricht zurück geliefert.
+										</p>
+									</div>
+								</div>
+							</div>
+							<h4 class="p1" id="Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-ErrorAnfrageAccessToken">
+									Error Anfrage Access Token
+							</h4>
+							<div class="code panel pdl conf-macro output-block" style="border-width: 1px;" data-hasbody="true" data-macro-name="code">
+								<div class="codeContent panelContent pdl">
+									<div>
+										<div id="highlighter_693527" class="syntaxhighlighter sh-confluence nogutter  java">
+											<table cellspacing="0" cellpadding="0" class="codetable">
+												<tbody>
+													<tr>
+														<td class="code">
+															<div class="codecontainer" title="Hint: double-click to select code">
+																<div class="line number1 index0 alt2">
+																	<code class="java plain">
+																		{
+																	</code>
+																</div>
+																<div class="line number2 index1 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"status":401,
+																	</code>
+																</div>
+																<div class="line number3 index2 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"error":"Unauthorized",
+																	</code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"message":"Error description ...",
+																	</code>
+																</div>
+																<div class="line number5 index4 alt2">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"path":"/oauth/token"
+																	</code>
+																</div>
+																<div class="line number6 index5 alt1">
+																	<code class="java plain">
+																		}
+																	</code>
+																</div>
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							<br />
+							<br />
+							<h3 id="Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-2.AnsprechenderAPI-SchnittstellederBestelldaten">
+								2. Ansprechen der API-Schnittstelle der Bestelldaten
+							</h3>
+							<ul>
+								<li>
+									Location:&nbsp;
+									<ul>
+										<li>
+											Direkt:
+											<span class="nolink">
+												<a href="http://host:9002/belegcockpit/belegannahme/v1/belege" class="external-link" rel="nofollow">http://host:9017/ep-bestellung/v1/bestellungen</a>
+											</span>
+										</li>
+										<li>
+											Proxy: 
+											<a href="http://localhost:9017/ep-bestellung/v1/bestellungen" class="external-link" rel="nofollow">http://host/ep-bestellung/v1/bestellungen</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 id="Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-Anfrage">
+								Anfrage
+							</h4>
+							<p>Übergabe der Daten erfolgt durch POST eines JSON-Dokuments an die REST-Schnittstelle.</p>
+							<p>Der Aufbau des JSON-Dokuments wird wie folgt vorgegeben. Hierbei ist die Angabe der "<strong>itemId</strong>" (Datenbankfeld: CATEGORY_ID) <strong>optional</strong>:</p>
+							<div class="code panel pdl conf-macro output-block" style="border-width: 1px;" data-hasbody="true" data-macro-name="code">
+								<div class="codeContent panelContent pdl">
+									<div>
+										<div id="highlighter_729437" class="syntaxhighlighter sh-confluence nogutter  java">
+											<table cellspacing="0" cellpadding="0" class="codetable">
+												<tbody>
+													<tr>
+														<td class="code">
+															<div class="container" title="Hint: double-click to select code">
+																<div class="line number1 index0 alt2">
+																	<code class="java plain">http://host/ep-bestellung/v1/bestellungen
+																	</code>
+																</div>
+																<div class="line number2 index1 alt1">
+																	&nbsp;
+																</div>
+																<div class="line number3 index2 alt2">
+																	<code class="java plain">
+																		POST / HTTP/1.1
+																	</code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java plain">
+																		Host: server.example.com
+																	</code>
+																</div>
+																<div class="line number5 index4 alt2">
+																	<code class="java plain">
+																		Content-Type: application/json
+																	</code>
+																</div>
+																<div class="line number6 index5 alt1">
+																	<code class="java plain">
+																		Authorization: Bearer feefdae9-61ef-434a-8e0c-85eab2dcb02a
+																	</code>
+																</div>
+																<div class="line number7 index6 alt2">
+																	<code class="java plain">
+																		{
+																	</code>
+																</div>
+																<div class="line number8 index7 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"requestDate":"20160218",
+																	</code>
+																</div>
+																<div class="line number9 index8 alt2">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"itemId":"29193",
+																	</code>
+																</div>
+																<div class="line number10 index9 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"vendorId":"7664", 
+																	</code>
+																</div>
+																<div class="line number11 index10 alt2">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"requestDateEnd":"20160220", 
+																	</code>
+																</div>
+																<div class="line number12 index11 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"standort":"6612"
+																	</code>
+																</div>
+																<div class="line number13 index12 alt2">
+																	<code class="java plain">
+																		}&nbsp;&nbsp; &nbsp;
+																	</code>
+																</div>
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h4 id="Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-CURL-Befehl.1">
+								CURL-Befehl
+							</h4>
+							<ul>
+								<li>
+									Hierbei ist die Angabe der "<strong>itemId</strong>" (Datenbankfeld: CATEGORY_ID) <strong>,</strong> der<strong> "vendorId" </strong>und des Kennzeichens<strong> "standort" optional</strong>. <strong>Mindestens ein</strong> Datum (<strong>"requestDate"</strong> oder<strong> "requestDateEnd"</strong>) <strong>muss</strong> gefüllt sein:
+								</li>
+							</ul>
+							<div class="code panel pdl conf-macro output-block" style="border-width: 1px;" data-hasbody="true" data-macro-name="code">
+								<div class="codeContent panelContent pdl">
+									<div>
+										<div id="highlighter_592295" class="syntaxhighlighter sh-confluence nogutter  bash">
+											<table cellspacing="0" cellpadding="0" class="codetable">
+												<tbody>
+													<tr>
+														<td class="code">
+															<div class="codecontainer" title="Hint: double-click to select code">
+																<div class="line number1 index0 alt2">
+																	<code class="bash plain">
+																		In Windows curl:
+																	</code>
+																</div>
+																<div class="line number2 index1 alt1">
+																	<code class="bash plain">
+																		curl -H "Content-Type: application/json" -H "Authorization: Bearer 1d9bbf4d-8462-4440-ad77-6447e0b71521" -X POST -d "{\"requestDate\":\"20160218\",\"itemId\":\"29193\"}" https://host/ep-bestellung/v1/bestellungen
+																	</code>
+																</div>
+																<div class="line number3 index2 alt2">
+																	&nbsp;
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="bash plain">
+																		In Linux curl:
+																	</code>
+																</div>
+																<div class="line number5 index4 alt2">
+																	<code class="bash plain">
+																		curl -H "Content-Type: application/json" -H "Authorization: Bearer 1d9bbf4d-8462-4440-ad77-6447e0b71521" -X POST -d '{"requestDate":"20160218", "vendorId":"7664", "requestDateEnd" :"20160220", "standort" : "6612", "itemId" : "29193" }' https://host/ep-bestellung/v1/bestellungen
+																	</code>
+																</div>
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h4 id="Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-Antwort">
+								Antwort
+							</h4>
+							<p>Bei erfolgreicher Authentifizierung HTTP-Status-Code 200 mit folgendem Beispielinhalt:</p>
+							<div class="code panel pdl conf-macro output-block" style="border-width: 1px;" data-hasbody="true" data-macro-name="code">
+								<div class="codeContent panelContent pdl">
+									<div>
+										<div id="highlighter_8303" class="syntaxhighlighter sh-confluence nogutter  java">
+											<table cellspacing="0" cellpadding="0" class="codetable">
+												<tbody>
+													<tr>
+														<td class="code">
+															<div class="codecontainer" title="Hint: double-click to select code">
+																<div class="line number1 index0 alt2">
+																	<code class="java plain">
+																		{
+																	</code>
+																</div>
+																<div class="line number2 index1 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"kundenProjekt":"BAUHAUS",
+																	</code>
+																</div>
+																<div class="line number3 index2 alt2">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"betriebsstaette":"06503-KÖLN",
+																	</code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"bestellNummer":"1091490",
+																	</code>
+																</div>
+																<div class="line number5 index4 alt2">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"auftragsNummer":null,
+																	</code>
+																</div>
+																<div class="line number6 index5 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"oebsAuftrag":null,
+																	</code>
+																</div>
+																<div class="line number7 index6 alt2">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"plz":"48155",
+																	</code>
+																</div>
+																<div class="line number8 index7 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"abholadresse":"BAUHAUS GmbH &amp; Co. KG West (6612) - Theodor-Scheiwe-Str. 2 - Münster",
+																	</code>
+																</div>
+																<div class="line number9 index8 alt2">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"standort":"6612",
+																	</code>
+																</div>
+																<div class="line number10 index9 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"status":"N",
+																	</code>
+																</div>
+																<div class="line number11 index10 alt2">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"cancelReason":null,
+																	</code>
+																</div>
+																<div class="line number12 index11 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"bedarfsDatum":"2016-02-18",
+																	</code>
+																</div>
+																<div class="line number13 index12 alt2">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"zusageDatum":"2016-02-25",
+																	</code>
+																</div>
+																<div class="line number14 index13 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"artikelbeschreibung":"Elektronikschrott gemischt Entsorgungsdienstleistung (Container: Gitterbox 800 Liter)",
+																	</code>
+																</div>
+																<div class="line number15 index14 alt2">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"artikelnummer":"509569",
+																	</code>
+																</div>
+																<div class="line number16 index15 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"artikelArt":"29193",
+																	</code>
+																</div>
+																<div class="line number17 index16 alt2">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"categoryType":"FRACTION",
+																	</code>
+																</div>
+																<div class="line number18 index17 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"zusatzinformationen":null,
+																	</code>
+																</div>
+																<div class="line number19 index18 alt2">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"bestellteMenge":120,
+																	</code>
+																</div>
+																<div class="line number20 index19 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"mengenEinheit":"Kilogramm",
+																	</code>
+																</div>
+																<div class="line number21 index20 alt2">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"ansprechpartner":null,
+																	</code>
+																</div>
+																<div class="line number22 index21 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"aspTel":null,
+																	</code>
+																</div>
+																<div class="line number23 index22 alt2">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"aspMail":null,
+																	</code>
+																</div>
+																<div class="line number24 index23 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"erstellungsDatum":"2016-02-18",
+																	</code>
+																</div>
+																<div class="line number25 index24 alt2">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"bemerkung":null,
+																	</code>
+																</div>
+																<div class="line number26 index25 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"verwogen":null,
+																	</code>
+																</div>
+																<div class="line number27 index26 alt2">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"lsNummer":null,
+																	</code>
+																</div>
+																<div class="line number28 index27 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"gemeldeteMenge":null,
+																	</code>
+																</div>
+																<div class="line number29 index28 alt2">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"entsorgteMenge":null,
+																	</code>
+																</div>
+																<div class="line number30 index29 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"entsorgungsDatum":null,
+																	</code>
+																</div>
+																<div class="line number31 index30 alt2">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"belege":null,
+																	</code>
+																</div>
+																<div class="line number32 index31 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"vendorId":7664
+																	</code>
+																</div>
+																<div class="line number33 index32 alt2">
+																	<code class="java plain">
+																		}
+																	</code>
+																</div>
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h4 class="p1" id="Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-ErrorAnfrage">
+								Error Anfrage
+							</h4>
+							<p>Bei fehlerhafter&nbsp;Authentifizierung&nbsp;HTTP-Status-Code 401.</p>
+							<div class="code panel pdl conf-macro output-block" style="border-width: 1px;" data-hasbody="true" data-macro-name="code">
+								<div class="codeContent panelContent pdl">
+									<div>
+										<div id="highlighter_166619" class="syntaxhighlighter sh-confluence nogutter  java">
+											<table cellspacing="0" cellpadding="0" class="codetable">
+												<tbody>
+													<tr>
+														<td class="code">
+															<div class="codecontainer" title="Hint: double-click to select code">
+																<div class="line number1 index0 alt2">
+																	<code class="java plain">
+																		{
+																	</code>
+																</div>
+																<div class="line number2 index1 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"status":401,
+																	</code>
+																</div>
+																<div class="line number3 index2 alt2">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"error":"Unauthorized",
+																	</code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"message":"Error description ..."
+																	</code>
+																</div>
+																<div class="line number5 index4 alt2">
+																	<code class="java plain">
+																		}
+																	</code>
+																</div>
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
