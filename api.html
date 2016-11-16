@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
 	<head>
     	<meta charset="utf-8">
@@ -19,7 +19,6 @@
 
   	</head>
 	<body>
-
     	<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12">
@@ -65,12 +64,22 @@
 							<br />
 							<ul>
 								<li>
-									<a href="#current-version">Aktuelle Version</a>
+									<a href="#Generelles">1. Generelles</a>
+									<ul>
+										<li>
+											<a href="#Authentifzierung">1.1 Authentifizierung</a>
+										</li>
+									</ul>
 								</li>
 								<li>
-									<a href="#schema">Schema</a>
+									<a href="#Bestellungen">2 Bestellungen</a>
+									<ul>
+										<li>
+											<a href="#alleBestellungenAbrufen">2.1 Alle Bestellungen abrufen</a>
+										</li>
+									</ul>
 								</li>
-								<li>
+						<!--		<li>
 									<a href="#parameters">Parameter</a>
 								</li>
 								<li>
@@ -111,8 +120,37 @@
 								</li>
 								<li>
 									<a href="#timezones">Zeitzonen</a>
-								</li>
+								</li> -->
 							</ul>
+							<br />
+							<hr />
+							<br />
+							<br />
+							<h3 id="Generelles">1. Generelles</h3>
+							<p>In diesem Abschnitt stehen Bedingungen, die alle Anfragen an die API betreffen.</p>
+							<br />
+							<h4 id="Authentifzierung">1.1 Authentifizierung</h4>
+							<p>Alle RESTful-Abfragen dieser API setzen voraus, dass ein gültiges OAuth-Token übergeben wird. Wie ein solches Token generiert wird ist <a href="auth.html#Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-AnfrageAccessToken">hier</a> beschrieben. Dieser Token wird dann, wie <a href="auth.html#Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-1.AnforderneinesOAuthToken">hier</a> beschrieben, in den Header des REST-Requests eingefügt.</p>
+							<p>Einen Test-OAuth-Token kann man unter der URL <a href="https://interseroh-portal-test.com/oauth/token">https://interseroh-portal-test.com/oauth/token</a> erhalten.<br />
+							In der Produktivumgebung lautet die URL  <a href="https://h00244l.isd-it.interseroh-ag.local/oauth/token">https://h00244l.isd-it.interseroh-ag.local/oauth/token</a>.
+							
+							<br />
+							<hr />
+							<br />
+							<h3 id="Bestellungen">2. Bestellungen</h3>
+							<p>In diesem Abschnitt werden API-Aufrufe beschrieben, die den Abruf von Bestellungen zum Gegenstand haben.</p>
+							<p>Wenn mehrere Bestellungen in der Response zurückgegeben werden, sind die Bestellungen zeitlich sortiert. D.h. die jeweis <u>neueste</u> Bestellung steht an erster Stelle.</p>
+							<p>Mit dem Test-OAuth-Token kann testweise auf die <a href="https://interseroh-portal-test.com/ep-bestellung/v2/bestellungen">https://interseroh-portal-test.com/ep-bestellung/v2/bestellungen</a> zugreifen.
+							<p>Eine Online-Dokumentation zum genauene Aufbau des Request und der Response ist unter der URL <a href="http://interseroh-portal.de/ep-bestellung/swagger-ui.html">http://host:9101/ep-bestellungen/swagger-ui.html</a> verfügbar.</p>
+							<br />
+							<h4 id="alleBestellungenAbrufen">2.1 Alle Bestellungen abrufen</h4>
+							<h5>Request</h5>
+							<p>Das Abrufen von Bestellungen wird als GET-Request durchgeführt. der Aufruf gestaltet dich so:</p>
+							<code>https://www.interseroh-protal.de/ep-bestellung/v2/bestellungen?maxanzahl=xxx</code>
+							<p>Hierbei ist xxx die Anzahl der Bestellungen, die man maximal abrufen möchte. Wird der Parameter <code>maxanzahl</code> nicht angegeben, werden 100 Bestellungen zurückgegeben.</p>
+							<br />
+							<h5>Response</h5>
+							<p>Bei einem Fehler wird der entsprechende HTTP-Statuscode zurückgesendet. Ist der Statuscode 200, befinden sich die Nutzdaten im Body der Response im JSON-Format.</p>
 						</div>
 					</div>
 				</div>
