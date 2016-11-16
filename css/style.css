@@ -371,4 +371,15 @@ footer {
 	height: 2em;
 	line-height: 2.5em;
 }
+.codetable {
+	padding:2px 4px;
+	background-color: #f9f2f4;
+	border-radius:4px;
+	border:1px solid #e5e5e5;
+	overflow-x: auto;
+}
+
+.codecontainer {
+		width: 970px;
+}
 
