@@ -154,6 +154,423 @@
 							<br />
 							<h5>Response</h5>
 							<p>Bei einem Fehler wird der entsprechende HTTP-Statuscode zurückgesendet. Ist der Statuscode 200, befinden sich die Nutzdaten im Body der Response im JSON-Format.</p>
+							Im Fall eines Erfolges wird ein JSON zurückgegeben, der eine Liste der gefundenen Bestellungen entfällt. Jede Bestellung hat den folgenden Aufbau:<p>
+							<div class="code panel pdl conf-macro output-block" style="border-width: 1px;" data-hasbody="true" data-macro-name="code">
+								<div class="codeContent panelContent pdl">
+									<div>
+										<div id="highlighter_693527" class="syntaxhighlighter sh-confluence nogutter  java">
+											<table cellspacing="0" cellpadding="0" class="codetable">
+												<tbody>
+													<tr>
+														<td class="code">
+															<div class="codecontainer" title="Hint: double-click to select code">
+										
+																<div class="line number1 index0 alt2">
+																	<code class="java plain">
+																		{
+																	</code>
+																</div>
+																<div class="line number2 index1 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		"anfallstelle": {
+																	</code>
+																</div>
+																<div class="line number3 index2 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																	    "nummer": "string",
+																	</code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																	    "postalischeAnschrift": {
+																	</code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	"adressatenname": "string",
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	"gebaeudeadresse": {
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																        "ortsbezeichnung": "string",
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	"postleitzahl": "string",
+																   	</code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	"strassenname": "string"
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	}
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	}
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																  		},
+																  	</code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																  		"bestellnummer": "string",
+																  	</code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																  		"erstellungsdatum": "yyyy-MM-dd'T'hh:mm:ssZ",
+																  	</code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																  		"faelligkeitsdatum": "yyyy-MM-dd'T'hh:mm:ssZ",
+																  	</code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																  		"hauptposition": {
+																  	</code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	"artikel": {
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	"beschreibung": "string",
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	"nummer": "string"
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	},
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	"avvnummer": "string",
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	"bestellteMenge": 0,
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	"mengeneinheit": "string",
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	"nummer": "string"
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																  		},
+																  	</code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																  		"lieferant": {
+																  	</code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	"betriebsstaette": {
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																     	"kennung": "string"
+																    </code>
+																</div>																    
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	},
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																		},
+																	</code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	"nummer": "string"
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																  		},
+																  	</code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																  		"mitteilung": "string",
+																  	</code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																  		"optionsbuendel": [
+																  	</code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	{
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	"artikel": {
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	"beschreibung": "string",
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	"nummer": "string"
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	},
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	"bestellteMenge": 0,
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	"mengeneinheit": "string",
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	"nummer": "string"
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	}
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																  		],
+																  	</code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																  		"rahmenvertrag": {
+																  	</code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	"name": "string"
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																  		},
+																  	</code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																  		"status": "enum",
+																  	</code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																  		"ticketId": "string"
+																  	</code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java string">
+																		}
+																	</code>
+																</div>
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							<div/>
+							<p>Die ticketId ist ein eindeutiger Kennzeichner für die Bestellung. Diese TicketId wird auch bei einer Leistungsmeldung verwendet, um diese Leistung der zugrundeliegenden Bestellung zuordnen zu können.</p>
+							<p>Die bestellteMenge ist immer eine Fließkommazahl. Anstelle eines Kommas wird hierbei ein Punkt verwendet.</p>
+							<p>Der status ist eine Enummeration. er kann die Werte "Offen", "Disponiert", "Rueckgemeldet" und "Fakturiert" annehmen.</p>
 						</div>
 					</div>
 				</div>
