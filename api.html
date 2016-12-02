@@ -151,14 +151,15 @@
 							<h3 id="Bestellungen">2. Bestellungen</h3>
 							<p>In diesem Abschnitt werden API-Aufrufe beschrieben, die den Abruf von Bestellungen zum Gegenstand haben.</p>
 							<p>Wenn mehrere Bestellungen in der Response zurückgegeben werden, sind die Bestellungen zeitlich sortiert. D.h. die jeweis <u>neueste</u> Bestellung steht an erster Stelle.</p>
-							<p>Mit dem Test-OAuth-Token kann testweise auf die <a href="https://interseroh-portal-test.com/ep-bestellung/v2/bestellungen">https://interseroh-portal-test.com/ep-bestellung/v2/bestellungen</a> zugreifen.
-							<p>Eine Online-Dokumentation zum genauene Aufbau des Request und der Response ist unter der URL <a href="http://host.interseroh-ag:9101/ep-bestellungen/swagger-ui.html">http://host.interseroh-ag:9101/ep-bestellungen/swagger-ui.html</a> verfügbar.</p>
+							<p>Mit dem Test-OAuth-Token kann testweise auf die <a href="https://interseroh-portal-test.com/entsorger-bestellung/v2/bestellungen">https://interseroh-portal-test.com/entsorger-bestellung/v2/bestellungen</a> zugreifen.
+							<p>Eine Online-Dokumentation zum genauene Aufbau des Request und der Response ist unter der URL <a href="http://host.interseroh-ag:9101/entsorger-bestellungen/swagger-ui.html">http://host.interseroh-ag:9101/entsorger-bestellungen/swagger-ui.html</a> verfügbar.</p>
 							<br />
 							<h4 id="alleBestellungenAbrufen">2.1 Alle Bestellungen abrufen</h4>
 							<h5>Request</h5>
 							<p>Das Abrufen von Bestellungen wird als GET-Request durchgeführt. der Aufruf gestaltet dich so:</p>
-							<code>https://www.interseroh-protal.de/ep-bestellung/v2/bestellungen?maxanzahl=xxx</code>
-							<p>Hierbei ist xxx die Anzahl der Bestellungen, die man maximal abrufen möchte. Wird der Parameter <code>maxanzahl</code> nicht angegeben, werden 100 Bestellungen zurückgegeben.</p>
+							<code>https://www.interseroh-portal.de/entsorger-bestellung/v2/bestellungen?maxanzahl=xxx&mindatum=dd.mm.yyyy</code>
+							<p>Wird der optionale Parameter <code>maxanzahl</code> angegeben, ist xxx die Anzahl der Bestellungen, die man maximal abrufen möchte. Wird der Parameter <code>maxanzahl</code> nicht angegeben, werden 100 Bestellungen zurückgegeben.</p>
+							<p>Wird der optionsle Parameter <code>mindatum</code> angegeben, so werden die nur Bestellungen ab dem angegebenen Datum berücksichtigt. Wird der Parameter <code>mindatum</code> nicht angegeben, werden alle Bestellungen berücksichtigt.</p>
 							<br />
 							<h5>Response</h5>
 							<p>Bei einem Fehler wird der entsprechende HTTP-Statuscode zurückgesendet. Ist der Statuscode 200, befinden sich die Nutzdaten im Body der Response im JSON-Format.</p>
