@@ -383,3 +383,15 @@ footer {
 		width: 970px;
 }
 
+figure {
+  display: block;
+  margin: auto;
+  padding: 10px;
+  width: 90%;
+  background: white;
+}
+ 
+figcaption {
+  padding: 10px;
+  text-align: center;
+}
