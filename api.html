@@ -73,6 +73,11 @@
 											<a href="#Authentifzierung">1.1 Authentifizierung</a>
 										</li>
 									</ul>
+									<ul>
+										<li>
+											<a href="#Prozessmodell">1.2 Prozessmodell</a>
+										</li>
+									</ul>
 								</li>
 								<li>
 									<a href="#Bestellungen">2 Bestellung</a>
@@ -167,6 +172,13 @@
 							<p>Alle RESTful-Abfragen dieser API setzen voraus, dass ein gültiges OAuth-Token übergeben wird. Wie ein solches Token generiert wird ist <a href="auth.html#Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-AnfrageAccessToken">hier</a> beschrieben. Dieser Token wird dann, wie <a href="auth.html#Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-1.AnforderneinesOAuthToken">hier</a> beschrieben, in den Header des REST-Requests eingefügt.</p>
 							<p>Einen Test-OAuth-Token kann man unter der URL <a href="https://interseroh-portal-test.com/oauth/token">https://interseroh-portal-test.com/oauth/token</a> erhalten.<br />
 							In der Produktivumgebung lautet die URL  <a href="https://interseroh-host/oauth/token">https://interseroh-host/oauth/token</a>.
+							<br />
+							<h4 id="Authentifzierung">1.2 Prozessmodell</h4>
+							<p>Das Prozessmodell bildet den Prozess von der Abfrage einer Bestellung bis zur der Leistungsrückmeldung über die API ab.</p>
+							<figure>
+								<img src="images/ep-leistung-rueckmeldung-process.png" alt="Prozessmodell"/>
+								<figcaption>Prozessmodell der API</figcaption>
+							</figure>
 							<br />
 							<hr />
 							<br />
@@ -599,7 +611,7 @@
 							</div>
 							<p>Die ticketId ist ein eindeutiger Kennzeichner für die Bestellung. Diese TicketId wird auch bei einer Leistungsmeldung verwendet, um diese Leistung der zugrundeliegenden Bestellung zuordnen zu können.</p>
 							<p>Die bestellteMenge ist immer eine Fließkommazahl. Anstelle eines Kommas wird hierbei ein Punkt verwendet.</p>
-							<p>Der status ist eine Enummeration. er kann die Werte "Offen", "Disponiert", "Rueckgemeldet" und "Fakturiert" annehmen.</p>
+							<p>Der Status ist ein Aufzählungstyp. Er kann die Werte "Offen", "Disponiert", "Rueckgemeldet" und "Fakturiert" annehmen.</p>
 							<br />
 							<br />
 							<hr />
