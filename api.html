@@ -54,7 +54,7 @@
 					</nav>
 				</div>
 			</div>
-			<div class="row" style="padding-top: 1.5em;">
+			<div class="row" style="padding-top: 1.4em;">
 				<div class="col-md-12">
 					<div class="row">
 						<div class="col-md-3">
@@ -63,7 +63,7 @@
 							<h2>Entsorger Portal Datenservice API</h2>
 							<br />
 							<h3>Übersicht</h3>
-							<p>Hier werden die Resourcen der offiziellen API des Entsorger Portals beschrieben. Wenn Sie Probleme hierbei haben oder Anregungen machen möchten kontaktieren Sie bitte <a href="support.html">Support</a>.</p>
+							<p>Hier werden die Resourcen der offiziellen API des Entsorger Portals beschrieben. Wenn Sie Probleme hierbei haben, oder Anregungen machen möchten kontaktieren Sie bitte <a href="support.html">Support</a>.</p>
 							<br />
 							<ul>
 								<li>
@@ -176,17 +176,17 @@
 							<br />
 							<br />
 							<h3 id="Generelles">1. Generelles</h3>
-							<p>In diesem Abschnitt stehen Bedingungen, die alle Anfragen an die API betreffen.</p>
+							<p>In diesem Abschnitt sind Punkte aufgeführt, die alle Anfragen an die API betreffen.</p>
 							<br />
 							<h4 id="FachlicheBeschreibung">1.1 Fachliche Beschreibung</h4>
 							<figure>
 								<img src="images/prozess-ep-pic.png" alt="Fachliches Modell"/>
 								<figcaption>Fachliches Modell</figcaption>
 							</figure>
-							<p>Aus dem Auftrag eines Kunden, der bei Interseroh eingeht, wird eine Bestellung an einen Entsorger generiert. Der Entsorger ruft die Bestellung ab und erbringt seine Leistung entsprechend der Bestellung und meldet diese Leistung an die Interseroh zurück. Er kann den Status seiner Leistungsmeldung anschließend abrufen.</p>
+							<p>Aus dem Auftrag eines Kunden, der bei Interseroh eingeht, wird eine Bestellung an einen Entsorger generiert. Der Entsorger ruft die Bestellung ab, erbringt seine Leistung entsprechend der Bestellung und meldet diese Leistung an die Interseroh zurück. Er kann den Status seiner Leistungsmeldung anschließend abrufen.</p>
 							<br />
 							<h4 id="Authentifzierung">1.2 Authentifizierung</h4>
-							<p>Alle RESTful-Abfragen dieser API setzen voraus, dass ein gültiges OAuth-Token übergeben wird. Wie ein solches Token generiert wird ist <a href="auth.html#Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-AnfrageAccessToken">hier</a> beschrieben. Dieser Token wird dann, wie <a href="auth.html#Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-1.AnforderneinesOAuthToken">hier</a> beschrieben, in den Header des REST-Requests eingefügt.</p>
+							<p>Alle RESTful-Abfragen dieser API setzen voraus, dass ein gültiges OAuth-Token übergeben wird. Wie ein solches Token generiert wird ist <a href="auth.html#Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-AnfrageAccessToken">hier</a> beschrieben. Dieses Token wird dann, wie <a href="auth.html#Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-1.AnforderneinesOAuthToken">hier</a> beschrieben, in den Header des REST-Requests eingefügt.</p>
 							<p>Einen Test-OAuth-Token kann man unter der URL <a href="https://interseroh-portal-test.com/oauth/token">https://interseroh-portal-test.com/oauth/token</a> erhalten.<br />
 							In der Produktivumgebung lautet die URL  <a href="https://interseroh-host/oauth/token">https://[interseroh-host]/oauth/token</a>.
 							<br />
@@ -203,7 +203,7 @@
 							<p>In diesem Abschnitt werden API-Aufrufe beschrieben, die den Abruf von Bestellungen zum Gegenstand haben.</p>
 							<p>Wenn mehrere Bestellungen in der Response zurückgegeben werden, sind die Bestellungen zeitlich sortiert. D.h. die jeweis <u>neueste</u> Bestellung steht an erster Stelle.</p>
 							<p>Mit dem Test-OAuth-Token kann testweise auf die <a href="https://interseroh-portal-test.com/entsorger-bestellung/v2/bestellungen">https://interseroh-portal-test.com/entsorger-bestellung/v2/bestellungen</a> zugreifen.
-							<p>Eine Online-Dokumentation zum genauene Aufbau des Request und der Response ist unter der URL <a href="http://host.interseroh-ag:9101/entsorger-bestellung/v2/api-docs?group=bestellung">http://host.interseroh-ag:9101/entsorger-bestellungen/v2/api-docs?group=bestellung</a> verfügbar.</p>
+							<p>Eine Online-Dokumentation zum genauene Aufbau des Request und der Response ist unter der URL <a href="http://[interseroh-host]/entsorger-bestellung/v2/api-docs?group=bestellung">http://[interseroh-host]/entsorger-bestellungen/v2/api-docs?group=bestellung</a> verfügbar.</p>
 							<br />
 							<h4 id="BestellungenModel">2.1 Domain Modell</h4>
 							<figure>
@@ -213,12 +213,12 @@
 							<br/>
 							<h4 id="alleBestellungenAbrufen">2.2 Alle Bestellungen abrufen</h4>
 							<h5>Request</h5>
-							<p>Das Abrufen von Bestellungen wird als GET-Request durchgeführt. der Aufruf gestaltet dich so:
-							<code>https://www.interseroh-portal.de/entsorger-bestellung/v2/bestellungen?maxanzahl=xxx&mindatum=dd.mm.yyyy</code></p>
-							<p>Wird der optionale Parameter <code>maxanzahl</code> angegeben, ist xxx die Anzahl der Bestellungen, die man maximal abrufen möchte. Wird der Parameter <code>maxanzahl</code> nicht angegeben, werden 100 Bestellungen zurückgegeben.</p>
+							<p>Das Abrufen von Bestellungen wird als GET-Request ausgeführt. Der Aufruf der URL gestaltet sich derart:
+							<code>https://[interseroh-host]/entsorger-bestellung/v2/bestellungen?maxanzahl=xxx&mindatum=dd.mm.yyyy</code></p>
+							<p>Wird der optionale Parameter <code>maxanzahl</code> angegeben, ist xxx die Anzahl der Bestellungen, die man maximal abrufen möchte. Wird der Parameter <code>maxanzahl</code> nicht angegeben, werden maximal 100 Bestellungen zurückgegeben.</p>
 							<p>Wird der optionale Parameter <code>mindatum</code> angegeben, so werden nur Bestellungen ab dem angegebenen Datum berücksichtigt. Wird der Parameter <code>mindatum</code> nicht angegeben, werden alle Bestellungen berücksichtigt.</p>
 							<h5>Response</h5>
-							<p>Bei einem Fehler wird der entsprechende HTTP-Statuscode zurückgesendet. Ist der Statuscode 200, befinden sich die Nutzdaten im Body der Response im JSON-Format.</p>
+							<p>Bei einem Fehler wird der entsprechende HTTP-Statuscode zurückgesendet. Ist der Statuscode 200, befinden sich die Nutzdaten im Body der Response im JSON-Format.
 							Im Fall eines Erfolges wird eine Liste der gefundenen Bestellungen im JSON-Format zurückgegeben. Jede Bestellung hat den folgenden Aufbau:<p>
 							<div class="code panel pdl conf-macro output-block" style="border-width: 1px;" data-hasbody="true" data-macro-name="code">
 								<div class="codeContent panelContent pdl">
@@ -625,18 +625,18 @@
 									</div>
 								</div>
 							</div>
-							<p>Die ticketId ist ein eindeutiger Kennzeichner für die Bestellung. Diese TicketId wird auch bei einer Leistungsmeldung verwendet, um diese Leistung der zugrundeliegenden Bestellung zuordnen zu können.</p>
-							<p>Die bestellteMenge ist immer eine Fließkommazahl. Anstelle eines Kommas wird hierbei ein Punkt verwendet.</p>
+							<p>Die <code>ticketId</code> ist ein eindeutiger Kennzeichner für eine Bestellung. Diese TicketId wird auch bei einer Leistungsmeldung verwendet, um sie der zugrunde liegenden Bestellung zuordnen zu können.</p>
+							<p>Die <code>bestellteMenge</code> ist immer eine Fließkommazahl. Anstelle eines Kommas wird hierbei ein Punkt verwendet.</p>
 							<p>Der Status ist ein Aufzählungstyp. Er kann die Werte "Offen", "Disponiert", "Rueckgemeldet" und "Fakturiert" annehmen.</p>
 							<br />
 							<h4 id="einzelneBestellungAbrufen">2.3 Einzelne Bestellung abrufen</h4>
 							<h5>Request</h5>
-							<p>Das Abrufen einer einzelnen Bestellung wird ebenfalls als GET-Request realisiert. Dieser Aufruf gestaltet dich so:
-							<code>https://www.interseroh-portal.de/entsorger-bestellung/v2/bestellungen/ticketId</code></p>
-							<p>Bei diesem Aufruf ist es notwendig, die beim Abruf aller Bestellungen mitgelieferte TicketId anzugeben, da diese systemübergreifend eindeutig ist.</p>
+							<p>Das Abrufen einer einzelnen Bestellung wird ebenfalls als GET-Request realisiert. Dieser Aufruf sieht folgendermaßen aus:
+							<code>https://[interseroh-host]/entsorger-bestellung/v2/bestellungen/ticketId</code></p>
+							<p>Bei diesem Aufruf ist es notwendig, die beim Abruf aller Bestellungen mitgelieferte <code>ticketId</code> anzugeben, da diese systemübergreifend eindeutig ist.</p>
 							<h5>Response</h5>
 							<p>Bei einem Fehler wird der entsprechende HTTP-Statuscode zurückgesendet. Ist der Statuscode 200, befinden sich die Nutzdaten im Body der Response im JSON-Format.</p>
-							Im Fall eines Erfolges wird die gefundene Bestellung im JSON-Format zurückgegeben. Der Aufbau ist analog dem Abruf aller Bestellungen.<p>
+							Im Fall eines Erfolges wird die gefundene Bestellung im JSON-Format zurückgegeben. Der Aufbau ist analog dem Abruf aller Bestellungen.</p>
 							<br />
 							<br />
 							<hr />
@@ -649,7 +649,7 @@
 								<figcaption>Domain Modell für Leistungsmeldungen</figcaption>
 							</figure>
 							<h4 id="LeistungenTyp1">3.2 Leistungsmeldung Typ 1</h4>
-							<p> Bei der Leistungsmeldung Typ 1 handelt es sich um eine Leistungmeldung auf eine vorher abgerufene Bestellung. Die TicketId der Bestellung ist bekannt.</p>
+							<p> Bei der Leistungsmeldung Typ 1 handelt es sich um eine Leistungmeldung auf eine vorher abgerufene Bestellung. Die <code>ticketId</code> der Bestellung ist bekannt.</p>
 							<h5>Request</h5>
 							<p>Die Leistungsrückmeldung wird als POST-Request übertragen, wobei sich die Leistungsmetadaten als JSON-String im Body des Requests befinden. Sie haben das folgende Format:</p>
 							<div class="code panel pdl conf-macro output-block" style="border-width: 1px;" data-hasbody="true" data-macro-name="code">
@@ -825,10 +825,10 @@
 								</div>
 							</div>
 							<br />
-							<p>Die TicketId entspricht der TicketId, der zugehörigen Bestellung.</p>
+							<p>Die TicketId entspricht der <code>ticketId</code> der zugehörigen Bestellung.</p>
 							<p>Verwogen muss auf true gesetzt sein, wenn ein Wiegebeleg mitgeliefert wurde. Ist es auf false gesetzt oder gar nicht angegeben, wurde kein Beleg mitgeliefert.</p>
-							<p>Das Datum des Leistungsnachweises enthält datum und Uhrzeit der tatsächlichen Leistungserbringung.</p>
-							<p>Die Menge des Leistungsnachweises ist immer eine Fließkommazahl. Anstelle eines Kommas wird hierbei ein Punkt verwendet.</p>
+							<p>Das Datum des Leistungsnachweises enthält Datum und Uhrzeit der tatsächlichen Leistungserbringung.</p>
+							<p>Die Menge des Leistungsnachweises ist immer eine Fließkommazahl. Anstelle eines Kommas wird ein Punkt verwendet.</p>
 							<p>Die Menge der Behälter ist immer eine Ganzzahl.</p>
 							<h5>Response</h5>
 							<p>
@@ -849,8 +849,8 @@
 							<br />
 							<h3 id="Stammdaten">4. Stammdaten</h3>
 							<p>In diesem Abschnitt werden API-Aufrufe beschrieben, die den Abruf von Stammdaten zum Gegenstand haben.</p>
-							<p>Es gibt vier Arten von Stammdaten: LIEFERANT, ARTIKEL, ANFALLSTELLE und KOMBINATION. Die Art wird im GET-Request mit dem Parameter "typ" angegeben. Mit dem Test-OAuth-Token kann testweise auf die <a href="https://interseroh-portal-test.com/entsorger-bestellung/v1/stammdaten">https://interseroh-portal-test.com/entsorger-bestellung/v1/stammdaten</a> zugreifen.
-							<p>Eine Online-Dokumentation zum genauene Aufbau des Request und der Response ist unter der URL <a href="http://host.interseroh-ag:9101/entsorger-stammdaten/v2/api-docs?group=stammdaten">http://host.interseroh-ag:9101/entsorger-stammdaten/v2/api-docs?group=stammdaten</a> verfügbar.</p>
+							<p>Es gibt vier Arten von Stammdaten: LIEFERANT, ARTIKEL, ANFALLSTELLE und KOMBINATION. Die Art wird im GET-Request mit dem Parameter <code>typ</code> angegeben. Mit dem Test-OAuth-Token kann testweise auf die <a href="https://interseroh-portal-test.com/entsorger-bestellung/v1/stammdaten">https://interseroh-portal-test.com/entsorger-bestellung/v1/stammdaten</a> zugreifen.
+							<p>Eine Online-Dokumentation zum genauene Aufbau des Request sowie der Response ist unter der URL <a href="http://[interseroh-host]/entsorger-stammdaten/v2/api-docs?group=stammdaten">http://[interseroh-host]/entsorger-stammdaten/v2/api-docs?group=stammdaten</a> verfügbar.</p>
 							<br />
 							<h4 id="StammdatenModel">4.1 Domain Modell</h4>
 							<figure>
@@ -861,12 +861,12 @@
 							<h4 id="Stammdatenlieferant">4.2 Stammdaten (Lieferant)</h4>
 							<p>Dieser Typ des Stammdatenservices gibt alle dem Benutzer zugeordneten Lieferanten, sowie deren Betriebsstätten zurück. Alle anderen Objekte sind mit null belegt.</p>
 							<h5>Request</h5>
-							<p>Das Abrufen von Stammdaten wird als GET-Request durchgeführt. Der Aufruf gestaltet sich so:
-							<code>https://www.interseroh-portal.de/entsorger-stammdaten/v1/stammdaten?typ=Lieferant</code></p>
+							<p>Das Abrufen von Stammdaten wird als GET-Request ausgeführt. Der Aufruf der URL gestaltet sich so:
+							<code>https://[interseroh-host]/entsorger-stammdaten/v1/stammdaten?typ=Lieferant</code></p>
 							<p>Der notwendige Parameter <code>typ</code>steht in diesem Fall <code>Lieferant</code>, wobei Groß-/Kleinschreibung keine Rolle spielt.</p>
 							<h5>Response</h5>
 							<p>Bei einem Fehler wird der entsprechende HTTP-Statuscode zurückgesendet. Ist der Statuscode 200, befinden sich die Nutzdaten im Body der Response im JSON-Format.</p>
-							Im Fall eines Erfolges wird ein JSON zurückgegeben, der den entsprechenden Stammdatensatz enthält. Der Stammdatensatz für den Typ LIEFERANT hat den folgenden Aufbau:<p>
+							Im Fall eines Erfolges wird die Antwort im JSON-Format zurückgegeben, der den entsprechenden Stammdatensatz enthält. Der Stammdatensatz für den Typ LIEFERANT hat den folgenden Aufbau:<p>
 							<div class="code panel pdl conf-macro output-block" style="border-width: 1px;" data-hasbody="true" data-macro-name="code">
 								<div class="codeContent panelContent pdl">
 									<div>
