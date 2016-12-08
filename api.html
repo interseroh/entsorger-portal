@@ -186,12 +186,12 @@
 							<p>Aus dem Auftrag eines Kunden, der bei Interseroh eingeht, wird eine Bestellung an einen Entsorger generiert. Der Entsorger ruft die Bestellung ab, erbringt seine Leistung entsprechend der Bestellung und meldet diese Leistung an die Interseroh zurück. Er kann den Status seiner Leistungsmeldung anschließend abrufen.</p>
 							<br />
 							<h4 id="Authentifzierung">1.2 Authentifizierung</h4>
-							<p>Alle RESTful-Abfragen dieser API setzen voraus, dass ein gültiges OAuth-Token übergeben wird. Wie ein solches Token generiert wird ist <a href="auth.html#Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-AnfrageAccessToken">hier</a> beschrieben. Dieses Token wird dann, wie <a href="auth.html#Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-1.AnforderneinesOAuthToken">hier</a> beschrieben, in den Header des REST-Requests eingefügt.</p>
+							<p>Alle RESTful-Abfragen dieser API setzen voraus, dass ein gültiges OAuth-Token übergeben wird. Wie ein solches Token generiert wird, ist <a href="auth.html#Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-AnfrageAccessToken">hier</a> beschrieben. Dieses Token wird dann, wie <a href="auth.html#Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-1.AnforderneinesOAuthToken">an dieseer Stelle</a> beschrieben, in den Header des REST-Requests eingefügt.</p>
 							<p>Einen Test-OAuth-Token kann man unter der URL <a href="https://interseroh-portal-test.com/oauth/token">https://interseroh-portal-test.com/oauth/token</a> erhalten.<br />
 							In der Produktivumgebung lautet die URL  <a href="https://interseroh-host/oauth/token">https://[interseroh-host]/oauth/token</a>.
 							<br />
 							<h4 id="Prozessmodell">1.3 Prozessmodell</h4>
-							<p>Das Prozessmodell bildet den Prozess von der Abfrage einer Bestellung bis zur der Leistungsrückmeldung über die API in BPNM 2.0 ab.</p>
+							<p>Das Prozessmodell bildet den Prozess von der Abfrage einer Bestellung bis zur der Leistungsrückmeldung über die API in BPMN 2.0 ab.</p>
 							<figure>
 								<img src="images/ep-leistung-rueckmeldung-process.png" alt="Prozessmodell"/>
 								<figcaption>Prozessmodell der API</figcaption>
@@ -201,7 +201,7 @@
 							<br />
 							<h3 id="Bestellungen">2. Bestellung</h3>
 							<p>In diesem Abschnitt werden API-Aufrufe beschrieben, die den Abruf von Bestellungen zum Gegenstand haben.</p>
-							<p>Wenn mehrere Bestellungen in der Response zurückgegeben werden, sind die Bestellungen zeitlich sortiert. D.h. die jeweis <u>neueste</u> Bestellung steht an erster Stelle.</p>
+							<p>Wenn mehrere Bestellungen in der Response zurückgegeben werden, sind die Bestellungen zeitlich sortiert. D.h. die jeweils <u>neueste</u> Bestellung steht an erster Stelle.</p>
 							<p>Mit dem Test-OAuth-Token kann testweise auf die <a href="https://interseroh-portal-test.com/entsorger-bestellung/v2/bestellungen">https://interseroh-portal-test.com/entsorger-bestellung/v2/bestellungen</a> zugreifen.
 							<p>Eine Online-Dokumentation zum genauene Aufbau des Request und der Response ist unter der URL <a href="http://[interseroh-host]/entsorger-bestellung/v2/api-docs?group=bestellung">http://[interseroh-host]/entsorger-bestellungen/v2/api-docs?group=bestellung</a> verfügbar.</p>
 							<br />
