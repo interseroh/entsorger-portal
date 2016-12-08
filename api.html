@@ -70,12 +70,17 @@
 									<a href="#Generelles">1. Generelles</a>
 									<ul>
 										<li>
-											<a href="#Authentifzierung">1.1 Authentifizierung</a>
+											<a href="#FachlicheBeschreibung">1.1 Fachliche Beschreibung</a>
 										</li>
 									</ul>
 									<ul>
 										<li>
-											<a href="#Prozessmodell">1.2 Prozessmodell</a>
+											<a href="#Authentifzierung">1.2 Authentifizierung</a>
+										</li>
+									</ul>
+									<ul>
+										<li>
+											<a href="#Prozessmodell">1.3 Prozessmodell</a>
 										</li>
 									</ul>
 								</li>
@@ -168,13 +173,22 @@
 							<h3 id="Generelles">1. Generelles</h3>
 							<p>In diesem Abschnitt stehen Bedingungen, die alle Anfragen an die API betreffen.</p>
 							<br />
-							<h4 id="Authentifzierung">1.1 Authentifizierung</h4>
+							<h4 id="FachlicheBeschreibung">1.1 Fachliche Beschreibung</h4>
+							<figure>
+								<img src="images/prozess-ep-pic.png" alt="Fachliches Modell"/>
+								<figcaption>Fachliches Modell</figcaption>
+							</figure>
 							<p>Alle RESTful-Abfragen dieser API setzen voraus, dass ein gültiges OAuth-Token übergeben wird. Wie ein solches Token generiert wird ist <a href="auth.html#Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-AnfrageAccessToken">hier</a> beschrieben. Dieser Token wird dann, wie <a href="auth.html#Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-1.AnforderneinesOAuthToken">hier</a> beschrieben, in den Header des REST-Requests eingefügt.</p>
 							<p>Einen Test-OAuth-Token kann man unter der URL <a href="https://interseroh-portal-test.com/oauth/token">https://interseroh-portal-test.com/oauth/token</a> erhalten.<br />
 							In der Produktivumgebung lautet die URL  <a href="https://interseroh-host/oauth/token">https://interseroh-host/oauth/token</a>.
 							<br />
-							<h4 id="Prozessmodell">1.2 Prozessmodell</h4>
-							<p>Das Prozessmodell bildet den Prozess von der Abfrage einer Bestellung bis zur der Leistungsrückmeldung über die API ab.</p>
+							<h4 id="Authentifzierung">1.2 Authentifizierung</h4>
+							<p>Alle RESTful-Abfragen dieser API setzen voraus, dass ein gültiges OAuth-Token übergeben wird. Wie ein solches Token generiert wird ist <a href="auth.html#Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-AnfrageAccessToken">hier</a> beschrieben. Dieser Token wird dann, wie <a href="auth.html#Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-1.AnforderneinesOAuthToken">hier</a> beschrieben, in den Header des REST-Requests eingefügt.</p>
+							<p>Einen Test-OAuth-Token kann man unter der URL <a href="https://interseroh-portal-test.com/oauth/token">https://interseroh-portal-test.com/oauth/token</a> erhalten.<br />
+							In der Produktivumgebung lautet die URL  <a href="https://interseroh-host/oauth/token">https://interseroh-host/oauth/token</a>.
+							<br />
+							<h4 id="Prozessmodell">1.3 Prozessmodell</h4>
+							<p>Das Prozessmodell bildet den Prozess von der Abfrage einer Bestellung bis zur der Leistungsrückmeldung über die API in BPNM 2.0 ab.</p>
 							<figure>
 								<img src="images/ep-leistung-rueckmeldung-process.png" alt="Prozessmodell"/>
 								<figcaption>Prozessmodell der API</figcaption>
