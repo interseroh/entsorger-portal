@@ -96,6 +96,11 @@
 											<a href="#alleBestellungenAbrufen">2.2 Alle Bestellungen abrufen</a>
 										</li>
 									</ul>
+									<ul>
+										<li>
+											<a href="#einzelneBestellungAbrufen">2.3 Einzelne Bestellung abrufen</a>
+										</li>
+									</ul>
 								</li>
 								<li>
 									<a href="#Leistungenen">3 Leistung</a>
@@ -178,6 +183,7 @@
 								<img src="images/prozess-ep-pic.png" alt="Fachliches Modell"/>
 								<figcaption>Fachliches Modell</figcaption>
 							</figure>
+							<p>Aus dem Auftrag eines Kunden, der bei Interseroh eingeht, wird eine Bestellung an einen Entsorger generiert. Der Entsorger ruft die Bestellung ab und erbringt seine Leistung entsprechend der Bestellung und meldet diese Leistung an die Interseroh zurück. Er kann den Status seiner Leistungsmeldung anschließend abrufen.</p>
 							<br />
 							<h4 id="Authentifzierung">1.2 Authentifizierung</h4>
 							<p>Alle RESTful-Abfragen dieser API setzen voraus, dass ein gültiges OAuth-Token übergeben wird. Wie ein solches Token generiert wird ist <a href="auth.html#Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-AnfrageAccessToken">hier</a> beschrieben. Dieser Token wird dann, wie <a href="auth.html#Schnittstellen-BestelldatenfüriSupplierPortal-API-EP-1.AnforderneinesOAuthToken">hier</a> beschrieben, in den Header des REST-Requests eingefügt.</p>
@@ -207,14 +213,13 @@
 							<br/>
 							<h4 id="alleBestellungenAbrufen">2.2 Alle Bestellungen abrufen</h4>
 							<h5>Request</h5>
-							<p>Das Abrufen von Bestellungen wird als GET-Request durchgeführt. der Aufruf gestaltet dich so:</p>
-							<code>https://www.interseroh-portal.de/entsorger-bestellung/v2/bestellungen?maxanzahl=xxx&mindatum=dd.mm.yyyy</code>
+							<p>Das Abrufen von Bestellungen wird als GET-Request durchgeführt. der Aufruf gestaltet dich so:
+							<code>https://www.interseroh-portal.de/entsorger-bestellung/v2/bestellungen?maxanzahl=xxx&mindatum=dd.mm.yyyy</code></p>
 							<p>Wird der optionale Parameter <code>maxanzahl</code> angegeben, ist xxx die Anzahl der Bestellungen, die man maximal abrufen möchte. Wird der Parameter <code>maxanzahl</code> nicht angegeben, werden 100 Bestellungen zurückgegeben.</p>
 							<p>Wird der optionale Parameter <code>mindatum</code> angegeben, so werden nur Bestellungen ab dem angegebenen Datum berücksichtigt. Wird der Parameter <code>mindatum</code> nicht angegeben, werden alle Bestellungen berücksichtigt.</p>
-							<br />
 							<h5>Response</h5>
 							<p>Bei einem Fehler wird der entsprechende HTTP-Statuscode zurückgesendet. Ist der Statuscode 200, befinden sich die Nutzdaten im Body der Response im JSON-Format.</p>
-							Im Fall eines Erfolges wird ein JSON zurückgegeben, der eine Liste der gefundenen Bestellungen entfällt. Jede Bestellung hat den folgenden Aufbau:<p>
+							Im Fall eines Erfolges wird eine Liste der gefundenen Bestellungen im JSON-Format zurückgegeben. Jede Bestellung hat den folgenden Aufbau:<p>
 							<div class="code panel pdl conf-macro output-block" style="border-width: 1px;" data-hasbody="true" data-macro-name="code">
 								<div class="codeContent panelContent pdl">
 									<div>
@@ -624,6 +629,15 @@
 							<p>Die bestellteMenge ist immer eine Fließkommazahl. Anstelle eines Kommas wird hierbei ein Punkt verwendet.</p>
 							<p>Der Status ist ein Aufzählungstyp. Er kann die Werte "Offen", "Disponiert", "Rueckgemeldet" und "Fakturiert" annehmen.</p>
 							<br />
+							<h4 id="einzelneBestellungAbrufen">2.3 Einzelne Bestellung abrufen</h4>
+							<h5>Request</h5>
+							<p>Das Abrufen einer einzelnen Bestellung wird ebenfalls als GET-Request realisiert. Dieser Aufruf gestaltet dich so:
+							<code>https://www.interseroh-portal.de/entsorger-bestellung/v2/bestellungen/ticketId</code></p>
+							<p>Bei diesem Aufruf ist es notwendig, die beim Abruf aller Bestellungen mitgelieferte TicketId anzugeben, da diese systemübergreifend eindeutig ist.</p>
+							<h5>Response</h5>
+							<p>Bei einem Fehler wird der entsprechende HTTP-Statuscode zurückgesendet. Ist der Statuscode 200, befinden sich die Nutzdaten im Body der Response im JSON-Format.</p>
+							Im Fall eines Erfolges wird die gefundene Bestellung im JSON-Format zurückgegeben. Der Aufbau ist analog dem Abruf aller Bestellungen.<p>
+							<br />
 							<br />
 							<hr />
 							<h3 id="Leistungen">3 Leistung</h3>
@@ -636,7 +650,7 @@
 							</figure>
 							<h4 id="LeistungenTyp1">3.2 Leistungsmeldung Typ 1</h4>
 							<p> Bei der Leistungsmeldung Typ 1 handelt es sich um eine Leistungmeldung auf eine vorher abgerufene Bestellung. Die TicketId der Bestellung ist bekannt.</p>
-							<h4>Request</h4>
+							<h5>Request</h5>
 							<p>Die Leistungsrückmeldung wird als POST-Request übertragen, wobei sich die Leistungsmetadaten als JSON-String im Body des Requests befinden. Sie haben das folgende Format:</p>
 							<div class="code panel pdl conf-macro output-block" style="border-width: 1px;" data-hasbody="true" data-macro-name="code">
 								<div class="codeContent panelContent pdl">
@@ -816,7 +830,6 @@
 							<p>Das Datum des Leistungsnachweises enthält datum und Uhrzeit der tatsächlichen Leistungserbringung.</p>
 							<p>Die Menge des Leistungsnachweises ist immer eine Fließkommazahl. Anstelle eines Kommas wird hierbei ein Punkt verwendet.</p>
 							<p>Die Menge der Behälter ist immer eine Ganzzahl.</p>
-							<br />
 							<h5>Response</h5>
 							<p>
 								Die Response besteht aus einem der Statuscodes:
@@ -836,9 +849,8 @@
 							<br />
 							<h3 id="Stammdaten">4. Stammdaten</h3>
 							<p>In diesem Abschnitt werden API-Aufrufe beschrieben, die den Abruf von Stammdaten zum Gegenstand haben.</p>
-							<p>Es gibt vier Arten von Stammdaten: LIEFERANT, ARTIKEL, ANFALLSTELLE und KOMBINATION. Die Art wird im GET-Request mit dem Parameter "typ" angegeben.</p>
-							<p>Mit dem Test-OAuth-Token kann testweise auf die <a href="https://interseroh-portal-test.com/entsorger-bestellung/v1/stammdaten">https://interseroh-portal-test.com/entsorger-bestellung/v1/stammdaten</a> zugreifen.
-							<p>Eine Online-Dokumentation zum genauene Aufbau des Request und der Response ist unter der URL <a href="http://host.interseroh-ag:9101/entsorger-stammdaten/v1/api-docs?group=stammdaten">http://host.interseroh-ag:9101/entsorger-stammdaten/v1/api-docs?group=stammdaten</a> verfügbar.</p>
+							<p>Es gibt vier Arten von Stammdaten: LIEFERANT, ARTIKEL, ANFALLSTELLE und KOMBINATION. Die Art wird im GET-Request mit dem Parameter "typ" angegeben. Mit dem Test-OAuth-Token kann testweise auf die <a href="https://interseroh-portal-test.com/entsorger-bestellung/v1/stammdaten">https://interseroh-portal-test.com/entsorger-bestellung/v1/stammdaten</a> zugreifen.
+							<p>Eine Online-Dokumentation zum genauene Aufbau des Request und der Response ist unter der URL <a href="http://host.interseroh-ag:9101/entsorger-stammdaten/v2/api-docs?group=stammdaten">http://host.interseroh-ag:9101/entsorger-stammdaten/v2/api-docs?group=stammdaten</a> verfügbar.</p>
 							<br />
 							<h4 id="StammdatenModel">4.1 Domain Modell</h4>
 							<figure>
@@ -849,10 +861,9 @@
 							<h4 id="Stammdatenlieferant">4.2 Stammdaten (Lieferant)</h4>
 							<p>Dieser Typ des Stammdatenservices gibt alle dem Benutzer zugeordneten Lieferanten, sowie deren Betriebsstätten zurück. Alle anderen Objekte sind mit null belegt.</p>
 							<h5>Request</h5>
-							<p>Das Abrufen von Stammdaten wird als GET-Request durchgeführt. Der Aufruf gestaltet dich so:</p>
-							<code>https://www.interseroh-portal.de/entsorger-stammdaten/v1/stammdaten?typ=Lieferant</code>
-							<p>Der notwendige Parameter <code>typ</code>steht in diesem Fall Lieferant, wobei Groß-/Kleinschreibung keine Rolle spielt.</p>
-							<br />
+							<p>Das Abrufen von Stammdaten wird als GET-Request durchgeführt. Der Aufruf gestaltet sich so:
+							<code>https://www.interseroh-portal.de/entsorger-stammdaten/v1/stammdaten?typ=Lieferant</code></p>
+							<p>Der notwendige Parameter <code>typ</code>steht in diesem Fall <code>Lieferant</code>, wobei Groß-/Kleinschreibung keine Rolle spielt.</p>
 							<h5>Response</h5>
 							<p>Bei einem Fehler wird der entsprechende HTTP-Statuscode zurückgesendet. Ist der Statuscode 200, befinden sich die Nutzdaten im Body der Response im JSON-Format.</p>
 							Im Fall eines Erfolges wird ein JSON zurückgegeben, der den entsprechenden Stammdatensatz enthält. Der Stammdatensatz für den Typ LIEFERANT hat den folgenden Aufbau:<p>
