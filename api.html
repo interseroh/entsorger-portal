@@ -288,7 +288,7 @@
 																		&nbsp;&nbsp;
 																	</code>
 																	<code class="java string">
-																  		"lieferant": {
+																  		"auftrag": {
 																  	</code>
 																</div>
 																<div class="line number4 index3 alt1">
@@ -296,7 +296,7 @@
 																		&nbsp;&nbsp;&nbsp;&nbsp;
 																	</code>
 																	<code class="java string">
-																    	"nummer": "string",
+																    	"turnus": "boolean",
 																    </code>
 																</div>
 																<div class="line number4 index3 alt1">
@@ -304,7 +304,47 @@
 																		&nbsp;&nbsp;&nbsp;&nbsp;
 																	</code>
 																	<code class="java string">
-																    	"betriebsstaette": {
+																    	"uniqueKey": "string"
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																  		},
+																  	</code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																  		"betriebsstaette": {
+																  	</code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	"kennung": "string",
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	"uniqueKey": "string",
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	"lieferant": {
 																    </code>
 																</div>
 																<div class="line number4 index3 alt1">
@@ -312,7 +352,7 @@
 																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 																	</code>
 																	<code class="java string">
-																     	"kennung": "string"
+																     	"nummer": "string"
 																    </code>
 																</div>																    
 																<div class="line number4 index3 alt1">
@@ -360,7 +400,7 @@
 																		&nbsp;&nbsp;
 																	</code>
 																	<code class="java string">
-																		"anfallstelle": {
+																		"leistungsadresse": {
 																	</code>
 																</div>
 																<div class="line number3 index2 alt1">
@@ -437,26 +477,10 @@
 																</div>
 																<div class="line number4 index3 alt1">
 																	<code class="java spaces">
-																		&nbsp;&nbsp;
-																	</code>
-																	<code class="java string">
-																  		},
-																  	</code>
-																</div>
-																<div class="line number4 index3 alt1">
-																	<code class="java spaces">
-																		&nbsp;&nbsp;
-																	</code>
-																	<code class="java string">
-																  		"hauptposition": {
-																  	</code>
-																</div>
-																<div class="line number4 index3 alt1">
-																	<code class="java spaces">
 																		&nbsp;&nbsp;&nbsp;&nbsp;
 																	</code>
 																	<code class="java string">
-																    	"nummer": "string",
+																    	"typ": "enum",
 																    </code>
 																</div>
 																<div class="line number4 index3 alt1">
@@ -464,55 +488,7 @@
 																		&nbsp;&nbsp;&nbsp;&nbsp;
 																	</code>
 																	<code class="java string">
-																    	"bestellteMenge": 0,
-																    </code>
-																</div>
-																<div class="line number4 index3 alt1">
-																	<code class="java spaces">
-																		&nbsp;&nbsp;&nbsp;&nbsp;
-																	</code>
-																	<code class="java string">
-																    	"mengeneinheit": "string",
-																    </code>
-																</div>
-																<div class="line number4 index3 alt1">
-																	<code class="java spaces">
-																		&nbsp;&nbsp;&nbsp;&nbsp;
-																	</code>
-																	<code class="java string">
-																    	"artikel": {
-																    </code>
-																</div>
-																<div class="line number4 index3 alt1">
-																	<code class="java spaces">
-																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																	</code>
-																	<code class="java string">
-																    	"nummer": "string",
-																    </code>
-																</div>
-																<div class="line number4 index3 alt1">
-																	<code class="java spaces">
-																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																	</code>
-																	<code class="java string">
-																    	"beschreibung": "string"
-																    </code>
-																</div>
-																<div class="line number4 index3 alt1">
-																	<code class="java spaces">
-																		&nbsp;&nbsp;&nbsp;&nbsp;
-																	</code>
-																	<code class="java string">
-																    	},
-																    </code>
-																</div>
-																<div class="line number4 index3 alt1">
-																	<code class="java spaces">
-																		&nbsp;&nbsp;&nbsp;&nbsp;
-																	</code>
-																	<code class="java string">
-																    	"avvnummer": "string"
+																    	"uniqueKey": "string"
 																    </code>
 																</div>
 																<div class="line number4 index3 alt1">
@@ -528,7 +504,7 @@
 																		&nbsp;&nbsp;
 																	</code>
 																	<code class="java string">
-																  		"optionsbuendel": [
+																  		"positionen": [
 																  	</code>
 																</div>
 																<div class="line number4 index3 alt1">
@@ -552,7 +528,7 @@
 																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 																	</code>
 																	<code class="java string">
-																    	"bestellteMenge": 0,
+																    	"menge": 0,
 																    </code>
 																</div>
 																<div class="line number4 index3 alt1">
@@ -560,7 +536,7 @@
 																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 																	</code>
 																	<code class="java string">
-																    	"mengeneinheit": "string",
+																    	"masseinheit": "string",
 																    </code>
 																</div>
 																<div class="line number4 index3 alt1">
@@ -584,7 +560,23 @@
 																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 																	</code>
 																	<code class="java string">
-																    	"beschreibung": "string"
+																    	"beschreibung": "string",
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	"uniqueKey": "string",
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	"avvnummer": "string"
 																    </code>
 																</div>
 																<div class="line number4 index3 alt1">
@@ -593,6 +585,14 @@
 																	</code>
 																	<code class="java string">
 																    	},
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	"typ": "enum"
 																    </code>
 																</div>
 																<div class="line number4 index3 alt1">
@@ -626,8 +626,8 @@
 								</div>
 							</div>
 							<p>Die <code>ticketId</code> ist ein eindeutiger Kennzeichner für eine Bestellung. Diese TicketId wird auch bei einer Leistungsmeldung verwendet, um sie der zugrunde liegenden Bestellung zuordnen zu können.</p>
-							<p>Die <code>bestellteMenge</code> ist immer eine Fließkommazahl. Anstelle eines Kommas wird hierbei ein Punkt verwendet.</p>
-							<p>Der Status ist ein Aufzählungstyp. Er kann die Werte "Offen", "Disponiert", "Rueckgemeldet" und "Fakturiert" annehmen.</p>
+							<p>Die <code>menge</code> ist immer eine Fließkommazahl. Anstelle eines Kommas wird hierbei ein Punkt verwendet.</p>
+							<p>Der Status ist ein Aufzählungstyp. Er kann die Werte "Offen", "Disponiert", "Rueckgemeldet", "Fakturiert" sowie "Storniert" annehmen.</p>
 							<br />
 							<h4 id="einzelneBestellungAbrufen">2.3 Einzelne Bestellung abrufen</h4>
 							<h5>Request</h5>
