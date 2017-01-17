@@ -646,7 +646,7 @@
 																		&nbsp;&nbsp;
 																	</code>
 																	<code class="java string">
-																  		"verwogen": true / false,
+																  		"verwogen": "boolean",
 																  	</code>
 																</div>
 																<div class="line number4 index3 alt1">
@@ -782,7 +782,7 @@
 																		&nbsp;&nbsp;&nbsp;&nbsp;
 																	</code>
 																	<code class="java string">
-																	    "nummer": "string",
+																	    "name": "string",
 																	</code>
 																</div>
 																<div class="line number4 index3 alt1">
@@ -861,7 +861,7 @@
 																		&nbsp;&nbsp;&nbsp;&nbsp;
 																	</code>
 																	<code class="java string">
-																  		"datum": "yyyy-MM-dd'T'hh:mm:ssZ",
+																  		"datum": "datetime",
 																  	</code>
 																</div>
 																<div class="line number4 index3 alt1">
@@ -869,7 +869,7 @@
 																		&nbsp;&nbsp;&nbsp;&nbsp;
 																	</code>
 																	<code class="java string">
-																    	"menge": 0.0,
+																    	"menge": "double",
 																    </code>
 																</div>
 																<div class="line number4 index3 alt1">
@@ -978,7 +978,7 @@
 							<p>Die TicketId entspricht der <code>ticketId</code> der zugehörigen Bestellung.</p>
 							<p>Die Refernz kann gesetzt werden, muss es aber nicht.</p>
 							<p>Verwogen muss auf true gesetzt sein, wenn ein Wiegebeleg mitgeliefert wurde. Ist es auf false gesetzt oder gar nicht angegeben, wurde entweder kein Beleg mitgeliefert, oder ein Lieferschein als Beleg.</p>
-							<p>Das Datum des Leistungsnachweises enthält Datum und Uhrzeit der tatsächlichen Leistungserbringung.</p>
+							<p>Das Datum des Leistungsnachweises enthält Datum und Uhrzeit der tatsächlichen Leistungserbringung. Die Notation entspricht dem ISO 8601-Format: yyyy-MM-dd'T'hh:mm:ssZ</p>
 							<p>Die Menge des Leistungsnachweises ist immer eine Fließkommazahl. Anstelle eines Kommas wird ein Punkt verwendet.</p>
 							<p>Der Rest der Werte wird automatisch im Service gesetzt.</p>
 							<h5>Response</h5>
