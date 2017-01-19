@@ -161,8 +161,8 @@
 							<h3 id="Bestellungen">2. Bestellung</h3>
 							<p>In diesem Abschnitt werden API-Aufrufe beschrieben, die den Abruf von Bestellungen zum Gegenstand haben.</p>
 							<p>Wenn mehrere Bestellungen in der Response zurückgegeben werden, sind die Bestellungen zeitlich sortiert. D.h. die jeweils <u>neueste</u> Bestellung steht an erster Stelle.</p>
-							<p>Mit dem Test-OAuth-Token kann testweise auf die <a href="https://interseroh-portal-test.com/entsorger-bestellung/v2/bestellungen">https://interseroh-portal-test.com/entsorger-bestellung/v2/bestellungen</a> zugreifen.
-							<p>Eine Online-Dokumentation zum genauene Aufbau des Request und der Response ist unter der URL <a href="http://[interseroh-host]/entsorger-bestellung/v2/api-docs?group=bestellung">http://[interseroh-host]/entsorger-bestellungen/v2/api-docs?group=bestellung</a> verfügbar.</p>
+							<p>Mit dem Test-OAuth-Token kann testweise auf die <a href="https://interseroh-portal-test.com/entsorgerportal/entsorger-bestellung/v2/bestellungen">https://www.interseroh-portal-test.com/entsorgerportal/entsorger-bestellung/v2/bestellungen</a> zugreifen.
+							<p>Eine Online-Dokumentation zum genauene Aufbau des Request und der Response ist unter dem Swagger-Microservice <a href="http://www.interseroh-portal-test.com/entsorgerportal/api-docs/swagger-ui.html">http://www.interseroh-portal-test.com/entsorgerportal/api-docs/swagger-ui.html</a> verfügbar.</p>
 							<br />
 							<h4 id="BestellungenModel">2.1 Domain Modell</h4>
 							<figure>
@@ -172,8 +172,8 @@
 							<br/>
 							<h4 id="alleBestellungenAbrufen">2.2 Alle Bestellungen abrufen</h4>
 							<h5>Request</h5>
-							<p>Das Abrufen von Bestellungen wird als GET-Request ausgeführt. Der Aufruf der URL gestaltet sich derart:
-							<code>https://[interseroh-host]/entsorger-bestellung/v2/bestellungen?maxanzahl=xxx&mindatum=dd.mm.yyyy</code></p>
+							<p>Das Abrufen von Bestellungen wird als GET-Request ausgeführt. Der Aufruf der URL gestaltet sich beim Testzugang derart:
+							<code>https://interseroh-portal-test.com/entsorgerportal/entsorger-bestellung/v2/bestellungen?maxanzahl=xxx&mindatum=dd.mm.yyyy</code></p>
 							<p>Wird der optionale Parameter <code>maxanzahl</code> angegeben, ist xxx die Anzahl der Bestellungen, die man maximal abrufen möchte. Wird der Parameter <code>maxanzahl</code> nicht angegeben, werden maximal 100 Bestellungen zurückgegeben.</p>
 							<p>Wird der optionale Parameter <code>mindatum</code> angegeben, so werden nur Bestellungen ab dem angegebenen Datum berücksichtigt. Wird der Parameter <code>mindatum</code> nicht angegeben, werden alle Bestellungen berücksichtigt.</p>
 							<h5>Response</h5>
@@ -590,8 +590,8 @@
 							<br />
 							<h4 id="einzelneBestellungAbrufen">2.3 Einzelne Bestellung abrufen</h4>
 							<h5>Request</h5>
-							<p>Das Abrufen einer einzelnen Bestellung wird ebenfalls als GET-Request realisiert. Dieser Aufruf sieht folgendermaßen aus:
-							<code>https://[interseroh-host]/entsorger-bestellung/v2/bestellungen/ticketId</code></p>
+							<p>Das Abrufen einer einzelnen Bestellung wird ebenfalls als GET-Request realisiert. Dieser Aufruf sieht im Testzugang folgendermaßen aus:
+							<code>https://interseroh-portal-test.com/entsorgerportal/entsorger-bestellung/v2/bestellungen/ticketId</code></p>
 							<p>Bei diesem Aufruf ist es notwendig, die beim Abruf aller Bestellungen mitgelieferte <code>ticketId</code> anzugeben, da diese systemübergreifend eindeutig ist.</p>
 							<h5>Response</h5>
 							<p>Bei einem Fehler wird der entsprechende HTTP-Statuscode zurückgesendet. Ist der Statuscode 200, befinden sich die Nutzdaten im Body der Response im JSON-Format.</p>
@@ -601,6 +601,8 @@
 							<hr />
 							<h3 id="Leistungen">3 Leistung</h3>
 							<p>In diesem Abschnitt werden API-Aufrufe beschrieben, die die Rückmeldung einer Leistung zum Gegenstand haben.</p>
+							<p>Mit dem Test-OAuth-Token kann testweise auf die <a href="https://interseroh-portal-test.com/entsorgerportal/entsorger-leistung/v1/leistungen">https://www.interseroh-portal-test.com/entsorgerportal/entsorger-leistung/v1/leistungen</a> zugreifen.
+							<p>Eine Online-Dokumentation zum genauene Aufbau des Request und der Response ist unter dem Swagger-Microservice <a href="http://www.interseroh-portal-test.com/entsorgerportal/api-docs/swagger-ui.html">http://www.interseroh-portal-test.com/entsorgerportal/api-docs/swagger-ui.html</a> verfügbar.</p>
 							<br />
 							<h4 id="LeistungModel">3.1 Domain Modell</h4>
 							<figure>
