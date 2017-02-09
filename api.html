@@ -231,7 +231,7 @@
 																		&nbsp;&nbsp;
 																	</code>
 																	<code class="java string">
-																  		"status": "enum",
+																  		"status": "enum"
 																  	</code>
 																</div>
 																<div class="line number4 index3 alt1">
@@ -239,7 +239,23 @@
 																		&nbsp;&nbsp;
 																	</code>
 																	<code class="java string">
-																  		"mitteilung": "string",
+																  		"detail": {
+																  	</code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																  		"mitteilung": "string"
+																  	</code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																  		},
 																  	</code>
 																</div>
 																<div class="line number4 index3 alt1">
@@ -640,15 +656,7 @@
 																		&nbsp;&nbsp;
 																	</code>
 																	<code class="java string">
-																  		"npId": "string",
-																  	</code>
-																</div>
-																<div class="line number4 index3 alt1">
-																	<code class="java spaces">
-																		&nbsp;&nbsp;
-																	</code>
-																	<code class="java string">
-																  		"verwogen": "boolean",
+																  		"privatReferenz": "string",
 																  	</code>
 																</div>
 																<div class="line number4 index3 alt1">
@@ -847,16 +855,8 @@
 																		&nbsp;&nbsp;
 																	</code>
 																	<code class="java string">
-																  		"nachweis": {
+																  		"meldung": {
 																  	</code>
-																</div>
-																<div class="line number4 index3 alt1">
-																	<code class="java spaces">
-																		&nbsp;&nbsp;&nbsp;&nbsp;
-																	</code>
-																	<code class="java string">
-																    	"lieferscheinnummer": "string",
-																    </code>
 																</div>
 																<div class="line number4 index3 alt1">
 																	<code class="java spaces">
@@ -887,7 +887,15 @@
 																		&nbsp;&nbsp;&nbsp;&nbsp;
 																	</code>
 																	<code class="java string">
-																    	"beleg": {
+																  		"verwogen": "boolean",
+																  	</code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	"beleg": [
 																    </code>
 																</div>
 																<div class="line number4 index3 alt1">
@@ -895,31 +903,7 @@
 																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 																	</code>
 																	<code class="java string">
-																    	"dummy": "string"
-																    </code>
-																</div>
-																<div class="line number4 index3 alt1">
-																	<code class="java spaces">
-																		&nbsp;&nbsp;&nbsp;&nbsp;
-																	</code>
-																	<code class="java string">
-																    	},
-																    </code>
-																</div>
-																<div class="line number4 index3 alt1">
-																	<code class="java spaces">
-																		&nbsp;&nbsp;&nbsp;&nbsp;
-																	</code>
-																	<code class="java string">
-																    	"wiegeschein": {
-																    </code>
-																</div>
-																<div class="line number4 index3 alt1">
-																	<code class="java spaces">
-																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																	</code>
-																	<code class="java string">
-																    	"beleg": {
+																    	{
 																    </code>
 																</div>
 																<div class="line number4 index3 alt1">
@@ -927,7 +911,15 @@
 																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 																	</code>
 																	<code class="java string">
-																    	"dummy": "string"
+																    	"nummer": "string",
+																    </code>
+																</div>
+																<div class="line number4 index3 alt1">
+																	<code class="java spaces">
+																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	</code>
+																	<code class="java string">
+																    	"typ": "enum"
 																    </code>
 																</div>
 																<div class="line number4 index3 alt1">
@@ -935,15 +927,7 @@
 																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 																	</code>
 																	<code class="java string">
-																    	},
-																    </code>
-																</div>
-																<div class="line number4 index3 alt1">
-																	<code class="java spaces">
-																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																	</code>
-																	<code class="java string">
-																    	"nummer": "string"
+																    	}
 																    </code>
 																</div>
 																<div class="line number4 index3 alt1">
@@ -951,7 +935,7 @@
 																		&nbsp;&nbsp;&nbsp;&nbsp;
 																	</code>
 																	<code class="java string">
-																    	}
+																    	]
 																    </code>
 																</div>
 																<div class="line number4 index3 alt1">
@@ -980,14 +964,14 @@
 							<p>Die TicketId entspricht der <code>ticketId</code> der zugehörigen Bestellung.</p>
 							<p>Die Refernz kann gesetzt werden, muss es aber nicht.</p>
 							<p>Verwogen muss auf true gesetzt sein, wenn ein Wiegebeleg mitgeliefert wurde. Ist es auf false gesetzt oder gar nicht angegeben, wurde entweder kein Beleg mitgeliefert, oder ein Lieferschein als Beleg.</p>
-							<p>Das Datum des Leistungsnachweises enthält Datum und Uhrzeit der tatsächlichen Leistungserbringung. Die Notation entspricht dem ISO 8601-Format: yyyy-MM-dd'T'hh:mm:ssZ</p>
-							<p>Die Menge des Leistungsnachweises ist immer eine Fließkommazahl. Anstelle eines Kommas wird ein Punkt verwendet.</p>
+							<p>Das Datum der Leistungsmeldung enthält Datum und Uhrzeit der tatsächlichen Leistungserbringung. Die Notation entspricht dem ISO 8601-Format: yyyy-MM-dd'T'hh:mm:ssZ</p>
+							<p>Die Menge des Leistungsmeldung ist immer eine Fließkommazahl. Anstelle eines Kommas wird ein Punkt verwendet.</p>
 							<p>Der Rest der Werte wird automatisch im Service gesetzt.</p>
 							<h5>Response</h5>
 							<p>
 								Die Response besteht aus einem der Statuscodes:
 								<ul>
-									<li>200 - Ok</li>
+									<li>201 - Created</li>
 									<li>400 - Bad Request</li>
 									<li>401 - Unauthorized</li>
 									<li>403 - Forbidden</li>
