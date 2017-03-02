@@ -173,9 +173,11 @@
 							<h4 id="alleBestellungenAbrufen">2.2 Alle Bestellungen abrufen</h4>
 							<h5>Request</h5>
 							<p>Das Abrufen von Bestellungen wird als GET-Request ausgeführt. Der Aufruf der URL gestaltet sich beim Testzugang derart:
-							<code>https://interseroh-portal-test.com/entsorgerportal/entsorger-bestellung/v2/bestellungen?maxanzahl=xxx&mindatum=dd.mm.yyyy</code></p>
+							<code>https://interseroh-portal-test.com/entsorgerportal/entsorger-bestellung/v2/bestellungen?maxanzahl=xxx&mindatum=yyyy-mm-ddTHH:MM&maxdatum=yyyy-mm-ddTHH:MM&status=[enum]</code></p>
 							<p>Wird der optionale Parameter <code>maxanzahl</code> angegeben, ist xxx die Anzahl der Bestellungen, die man maximal abrufen möchte. Wird der Parameter <code>maxanzahl</code> nicht angegeben, werden maximal 100 Bestellungen zurückgegeben.</p>
-							<p>Wird der optionale Parameter <code>mindatum</code> angegeben, so werden nur Bestellungen ab dem angegebenen Datum berücksichtigt. Wird der Parameter <code>mindatum</code> nicht angegeben, werden alle Bestellungen berücksichtigt.</p>
+							<p>Wird der optionale Parameter <code>mindatum</code> angegeben, so werden nur Bestellungen ab dem angegebenen Datum berücksichtigt. Wird der Parameter <code>mindatum</code> nicht angegeben, werden alle Bestellungen aus der Vergangenheit berücksichtigt.</p>
+							<p>Wird der optionale Parameter <code>maxdatum</code> angegeben, so werden nur Bestellungen bis zum angegebenen Datum berücksichtigt. Wird der Parameter <code>maxdatum</code> nicht angegeben, werden alle Bestellungen berücksichtigt.</p>
+							<p>Wird der optionale Parameter <code>status</code> angegeben, nur Bestellungen berücksichtitgt, die dem/den angegebenen Status entsprechen. Gültige Werte sind OFFEN, DISPONIERT, FAKTURIERT und STORNIERT. Wird der Parameter <code>status</code> nicht angegeben, werden alle Bestellungen berücksichtigt.</p>
 							<h5>Response</h5>
 							<p>Bei einem Fehler wird der entsprechende HTTP-Statuscode zurückgesendet. Ist der Statuscode 200, befinden sich die Nutzdaten im Body der Response im JSON-Format.
 							Im Fall eines Erfolges wird eine Liste der gefundenen Bestellungen im JSON-Format zurückgegeben. Jede Bestellung hat den folgenden Aufbau:<p>
