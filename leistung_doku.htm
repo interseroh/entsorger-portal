@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="de"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Die 3 Meta-Tags oben *müssen* zuerst im head stehen; jeglicher sonstiger head-Inhalt muss *nach* diesen Tags kommen -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.png">
+    <title>Entsorgerportal API</title>
+    <!-- Bootstrap-CSS -->
+    <link href="doku-Dateien/bootstrap.css" rel="stylesheet">
+    <!-- Bootstrap-Theme -->
+    <link href="doku-Dateien/bootstrap-theme.css" rel="stylesheet">
+    <!-- Besondere Stile für diese Vorlage -->
+    <link href="doku-Dateien/theme.css" rel="stylesheet">
+    <!-- Nur für Testzwecke. Kopiere diese Zeilen nicht in echte Projekte! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="doku-Dateien/ie-emulation-modes-warning.js"></script>
+    <!-- Unterstützung für Media Queries und HTML5-Elemente in IE8 über HTML5 shim und Respond.js -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body role="document" style="color:#183362">
+    <!--<img src="bilder/interseroh_zero waste_klein.jpg">-->
+    <!-- Fixierte Navbar -->
+    <div class="container">
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Navigation ein-/ausblenden</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="index.htm">Home</a></li>
+              <li><a href="allgemein_doku.htm">Getting Started</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">APIs <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li ><a href="bestellung_doku.htm">Bestellung API</a></li>
+                  <li class="active"><a href="leistung_doku.htm">Leistungen API</a></li>
+                  <li><a href="stammdaten_doku.htm">Stammdaten API</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div style="width:100%">
+    <div style="width:50%;margin:auto;text-align:center;">
+      <img src="bilder/interseroh_zero waste_klein.jpg" alt="intersero Logo" style="width:250px;margin: auto; padding: 10px;">
+    </div>
+  </div>
+    <div class="container theme-showcase" role="main">
+      <!-- Haupt-Jumbotron für eine hauptsächliche Marketing-Botschaft oder einen Aufruf zu einer Aktion -->
+
+      <div style="text-align: center" class="jumbotron">
+        <h1>Interseroh Entsorger Portal Leistungen API</h1>
+     </div>
+        <h2>Beschreibung</h2>
+        <p>Interseroh Entsorger Portal Leistungen API bildet Leistungsmeldungen
+          eines Entsorgungspartner an Interseroh ab. Ein Leistungsmeldung liefert
+           alle relevanten Informationen nach Durchführung einer Dienstleistung.
+            Sie ist Voraussetzung für eine Abrechnung,</p>
+            <div style="margin:auto;text-align:center;">
+              <a href="https://www.interseroh-portal-test.com/entsorgerportal/api-docs/swagger-ui.html#/leistung-service-controller" target="_blank" class="btn btn-outline-inverse btn-lg"style="color:white;Background-color:#a1a1a3;border-color:grey;">Technische Dokumentation</a>
+            </div>
+      <div class="page-header">
+        <h3>Mehrwert</h3>
+          <p>Ein System, dass den Service <b>Interseroh Entsorger Portal Leistungen
+             API</b> konsumiert kann automatisiert Leistungsmeldungen an Interseroh
+             übermitteln.</p>
+         <h3>Funktionalität</h3>
+         <p>Der Service Interseroh Entsorger Portal Leistungen API kann über verschiedene Endpoints genutzt werden. Diese Endpoints sind durch Swagger dokumentiert (<a href="https://www.interseroh-portal-test.com/entsorgerportal/api-docs/swagger-ui.html#/leistung-service-controller" target="_blank">Link zu Swagger</a>).
+           <br>Folgende Funktionalitäten werden bereitgestellt:</p>
+           <ul>
+             <li>Empfang von Leistungsmeldungen in Form von Metadaten.</li>
+             <li>Empfang von Belegen in Form von Bilddateien.</li>
+           </ul>
+           <p>Der gesamte Service basiert auf dem Datenobjekt Leistung. Das Objekt hat Paramter und verweist auf weitere Objekte. Diese verfügen wiederum über eigene Paramter. Im folgenden werden die Objekte und Parameter erklärt:
+           </p>
+           <table class="table table-bordered">
+           <thead>
+              <tr>
+                <th>Objekt</th>
+                <th>Parameter</th>
+                <th>Erl&auml;uterung</th>
+              </tr>
+            </thead>
+            <tr>
+              <th rowspan="5"><br>meldung</th>
+              <td></td>
+              <td>Leistungsmeldung</td>
+            </tr>
+            <tr>
+              <td>datum</td>
+              <td>Leistungsdatum</td>
+            </tr>
+            <tr>
+              <td>masseinhalt</td>
+              <td>Muss der Einheit der Bestellposition vom Typ FRACTION entsprechen.</td>
+            </tr>
+            <tr>
+              <td>menge</td>
+              <td>Menge des Materials</td>
+            </tr>
+            <tr>
+              <td>verwogen</td>
+              <td>Gibt an, ob das Material verwogen wurde. Mögliche Werte: TRUE; FALSE</td>
+            </tr>
+            <tr>
+              <th rowspan="3">beleg</th>
+              <td></td>
+              <td>Leistungsbeleg</td>
+            </tr>
+            <tr>
+              <td>nummer</td>
+              <td>Eindeutige Nummer des Beleges.</td>
+            </tr>
+            <tr>
+              <td>typ</td>
+              <td>Typ des Belegs. Mögliche Werte: WIEGESCHEIN; LIEFERSCHEIN; SONSTIGES</td>
+            </tr>
+          </table>
+      </div>
+    </div> <!-- /container -->
+    <!-- Bootstrap-JavaScript
+    ================================================== -->
+    <!-- Am Ende des Dokuments platziert, damit Seiten schneller laden -->
+    <script src="doku-Dateien/jquery.js"></script>
+    <script src="doku-Dateien/bootstrap.js"></script>
+    <script src="doku-Dateien/docs.js"></script>
+    <!-- IE10-Anzeigefenster-Hack für Fehler auf Surface und Desktop-Windows-8 -->
+    <script src="doku-Dateien/ie10-viewport-bug-workaround.js"></script>
+<div id="global-zeroclipboard-html-bridge" class="global-zeroclipboard-container" style="position: absolute; left: 0px; top: -9999px; width: 15px; height: 15px; z-index: 999999999;" title="" data-original-title="Copy to clipboard">      <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="global-zeroclipboard-flash-bridge" width="100%" height="100%">         <param name="movie" value="/assets/flash/ZeroClipboard.swf?noCache=1490264310461">         <param name="allowScriptAccess" value="sameDomain">         <param name="scale" value="exactfit">         <param name="loop" value="false">         <param name="menu" value="false">         <param name="quality" value="best">         <param name="bgcolor" value="#ffffff">         <param name="wmode" value="transparent">         <param name="flashvars" value="trustedOrigins=holdirbootstrap.de%2C%2F%2Fholdirbootstrap.de%2Chttp%3A%2F%2Fholdirbootstrap.de">         <embed src="doku-Dateien/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" name="global-zeroclipboard-flash-bridge" allowscriptaccess="sameDomain" allowfullscreen="false" type="application/x-shockwave-flash" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="trustedOrigins=holdirbootstrap.de%2C%2F%2Fholdirbootstrap.de%2Chttp%3A%2F%2Fholdirbootstrap.de" scale="exactfit" width="100%" height="100%">                </object></div><svg xmlns="http://www.w3.org/2000/svg" width="1140" height="500" viewBox="0 0 1140 500" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="57" style="font-weight:bold;font-size:57pt;font-family:Arial, Helvetica, Open Sans, sans-serif">DritteFolie</text></svg></body></html>
