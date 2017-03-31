@@ -10,14 +10,8 @@
     <link rel="icon" href="favicon.png">
     <title>Entsorgerportal API</title>
 
-    <!-- Bootstrap-CSS -->
-    <link href="doku-Dateien/bootstrap.css" rel="stylesheet">
-    <!-- Bootstrap-Theme -->
-    <link href="doku-Dateien/bootstrap-theme.css" rel="stylesheet">
-
-    <!-- Besondere Stile für diese Vorlage -->
-    <link href="doku-Dateien/theme.css" rel="stylesheet">
-
+    <!-- Bootstrap-Interseroh-CSS -->
+    <link href="css/interseroh-bootstrap.css" rel="stylesheet">
     <!-- Nur für Testzwecke. Kopiere diese Zeilen nicht in echte Projekte! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="doku-Dateien/ie-emulation-modes-warning.js"></script>
@@ -29,7 +23,7 @@
     <![endif]-->
   </head>
 
-  <body role="document" style="color:#183362;">
+  <body role="document" style="color:#183362;font-family:31E5E6_0_0">
 
     <!-- Fixierte Navbar -->
     <div class="container">
@@ -52,7 +46,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">APIs <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="bestellung_doku.htm">Bestellung API</a></li>
-                  <li><a href="leistung_doku.htm">Leistungen API</a></li>
+                  <li><a href="leistung_doku.htm">Leistung API</a></li>
                   <li><a href="stammdaten_doku.htm">Stammdaten API</a></li>
                 </ul>
               </li>
@@ -97,11 +91,11 @@
           https://de.wikipedia.org/wiki/JavaScript_Object_Notation</a></li>
       </ul>
       <br>
-      <h3>Ticked ID</h3>
+      <h3>TicketID</h3>
       <p>Die einzelnen Services beziehen sich auf unterschiedliche Prozessschritte
         von durchgängigen Geschäftsvorgängen. D.h. zur Abwicklung eines einzelnen
          Geschäftsvorganges können mehrere Services angesprochen werden. Um einen
-         eindeutigen Bezug zu einem bestimmten Geschäftvorgang sicherzustellen erhällt jeder Geschäftsvorgang
+         eindeutigen Bezug zu einem bestimmten Geschäftvorgang sicherzustellen, erhält jeder Geschäftsvorgang
           einen eindeutigen technischen Identifizierer. Dieser Identifizierer ist die
            TicketID. Eine TicketID kann von Services in der Response geliefert aber auch
             als Parameter eines Requests benötigt werden. Sie ist für das Mapping der
@@ -121,17 +115,24 @@
         <br>
         <ul><b>Request</b>
           <li>Modell</li>
+          <li>DTO</li>
+          <li>Parameter</li>
+        </ul>
+        <br>
+        <ul><b>Response</b>
+          <li>Modell</li>
           <li>Content Type</li>
           <li>HTTP Status</li>
         </ul>
+        <br>
         <p>Zusätzlich können hier über eine Oberfläche Requests an die einzelnen
           Services getestet werden.</p>
         <br>
         <h3>Registrierung</h3>
         <p>Aktuell befinden sich alle Services noch in der Pilotphase. Während
-           dieser Phase findet die Registrierung nach Absprache zw. Interseroh
+           dieser Phase findet die Registrierung nach Absprache zwischen Interseroh
            und den Pliotpartnern statt. Beim Übergang in den Regelbetrieb wird
-           eine Web Applikation zur Registierung bereitgestellt werden.</p>
+           eine Webapplikation zur Registierung bereitgestellt werden.</p>
            <br>
          <h3>Authentifizierung</h3>
          <p>Die Authentifizierung erfolgt nach dem Authorization Framework
@@ -148,7 +149,7 @@
         <h4>Authorization Server</h4>
         <h5>Location</h5>
         <ul>
-          <li>Testsystem:<a href="https://www.interseroh-portal-test.com/oauth/token">https://www.interseroh-portal-test.com/oauth/token</a> </li>
+          <li>Testsystem: <a href="https://www.interseroh-portal-test.com/oauth/token">https://www.interseroh-portal-test.com/oauth/token</a> </li>
           <li>Produktivsystem: <a href=" https://interseroh-portal.de/oauth/token"> https://interseroh-portal.de/oauth/token</a></li>
         </ul>
         <br>
@@ -212,11 +213,34 @@
     <!-- Bootstrap-JavaScript
     ================================================== -->
     <!-- Am Ende des Dokuments platziert, damit Seiten schneller laden -->
-    <script src="doku-Dateien/jquery.js"></script>
-    <script src="doku-Dateien/bootstrap.js"></script>
-    <script src="doku-Dateien/docs.js"></script>
+    <script src="bootstrap/js/jquery.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="bootstrap/js/docs.js"></script>
     <!-- IE10-Anzeigefenster-Hack für Fehler auf Surface und Desktop-Windows-8 -->
-    <script src="doku-Dateien/ie10-viewport-bug-workaround.js"></script>
+    <script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
 
 
-<div id="global-zeroclipboard-html-bridge" class="global-zeroclipboard-container" style="position: absolute; left: 0px; top: -9999px; width: 15px; height: 15px; z-index: 999999999;" title="" data-original-title="Copy to clipboard">      <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="global-zeroclipboard-flash-bridge" width="100%" height="100%">         <param name="movie" value="/assets/flash/ZeroClipboard.swf?noCache=1490264310461">         <param name="allowScriptAccess" value="sameDomain">         <param name="scale" value="exactfit">         <param name="loop" value="false">         <param name="menu" value="false">         <param name="quality" value="best">         <param name="bgcolor" value="#ffffff">         <param name="wmode" value="transparent">         <param name="flashvars" value="trustedOrigins=holdirbootstrap.de%2C%2F%2Fholdirbootstrap.de%2Chttp%3A%2F%2Fholdirbootstrap.de">         <embed src="doku-Dateien/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" name="global-zeroclipboard-flash-bridge" allowscriptaccess="sameDomain" allowfullscreen="false" type="application/x-shockwave-flash" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="trustedOrigins=holdirbootstrap.de%2C%2F%2Fholdirbootstrap.de%2Chttp%3A%2F%2Fholdirbootstrap.de" scale="exactfit" width="100%" height="100%">                </object></div><svg xmlns="http://www.w3.org/2000/svg" width="1140" height="500" viewBox="0 0 1140 500" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="57" style="font-weight:bold;font-size:57pt;font-family:Arial, Helvetica, Open Sans, sans-serif">DritteFolie</text></svg></body></html>
+<div id="global-zeroclipboard-html-bridge" class="global-zeroclipboard-container" style="position: absolute; left: 0px; top: -9999px; width: 15px; height: 15px; z-index: 999999999;" title="" data-original-title="Copy to clipboard">
+        <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="global-zeroclipboard-flash-bridge" width="100%" height="100%">
+         <param name="movie" value="/assets/flash/ZeroClipboard.swf?noCache=1490264310461">
+         <param name="allowScriptAccess" value="sameDomain">
+         <param name="scale" value="exactfit">
+         <param name="loop" value="false">
+         <param name="menu" value="false">
+         <param name="quality" value="best">
+         <param name="bgcolor" value="#ffffff">
+         <param name="wmode" value="transparent">
+         <param name="flashvars" value="trustedOrigins=holdirbootstrap.de%2C%2F%2Fholdirbootstrap.de%2Chttp%3A%2F%2Fholdirbootstrap.de">
+         <embed src="doku-Dateien/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" name="global-zeroclipboard-flash-bridge" allowscriptaccess="sameDomain" allowfullscreen="false" type="application/x-shockwave-flash" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="trustedOrigins=holdirbootstrap.de%2C%2F%2Fholdirbootstrap.de%2Chttp%3A%2F%2Fholdirbootstrap.de" scale="exactfit" width="100%" height="100%">                </object>
+         </div>
+         <svg xmlns="http://www.w3.org/2000/svg" width="1140" height="500" viewBox="0 0 1140 500" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;">
+           <defs>
+             <style type="text/css">
+             </style>
+           </defs>
+           <text x="0" y="57" style="font-weight:bold;font-size:57pt;font-family:Arial, Helvetica, Open Sans, sans-serif">
+             DritteFolie
+           </text>
+         </svg>
+       </body>
+       </html>

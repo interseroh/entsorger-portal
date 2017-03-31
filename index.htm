@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="de"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<html lang="de">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,35 +9,16 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.png">
-
     <title>Entsorgerportal API</title>
-
     <!-- Bootstrap-CSS -->
-    <link href="doku-Dateien/bootstrap.css" rel="stylesheet">
-    <!-- Bootstrap-Theme -->
-    <link href="doku-Dateien/bootstrap-theme.css" rel="stylesheet">
-
-    <!-- Besondere Stile für diese Vorlage -->
-    <link href="doku-Dateien/theme.css" rel="stylesheet">
-
-    <!-- Nur für Testzwecke. Kopiere diese Zeilen nicht in echte Projekte! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <link href="css/interseroh-bootstrap.css" rel="stylesheet">
     <script src="doku-Dateien/ie-emulation-modes-warning.js"></script>
-
-    <!-- Unterstützung für Media Queries und HTML5-Elemente in IE8 über HTML5 shim und Respond.js -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
-
-  <body role="document"style="color:#183362">
-
+  <body role="document"style="color:#183362"style="font-family:FranklinGothic-Book">
     <!-- Fixierte Navbar -->
-    <div class="container">
-
-      <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+              <div class="container">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <span class="sr-only">Navigation ein-/ausblenden</span>
@@ -45,7 +27,7 @@
               <span class="icon-bar"></span>
             </button>
           </div>
-          <div id="navbar" class="navbar-collapse collapse">
+          <div id="navbar" class="navbar-collapse collapse dropdown">
             <ul class="nav navbar-nav">
               <li class="active"><a href="index.htm">Home</a></li>
               <li><a href="allgemein_doku.htm">Getting Started</a></li>
@@ -53,7 +35,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">APIs <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="bestellung_doku.htm">Bestellung API</a></li>
-                  <li><a href="leistung_doku.htm">Leistungen API</a></li>
+                  <li><a href="leistung_doku.htm">Leistung API</a></li>
                   <li><a href="stammdaten_doku.htm">Stammdaten API</a></li>
                 </ul>
               </li>
@@ -91,7 +73,7 @@
          </div>
          <div style="width:100%">
            <div style="margin:auto;text-align:center;">
-             <a href="allgemein_doku.htm" class="btn btn-outline-inverse btn-lg"style="color:white;Background-color:#a1a1a3;border-color:grey;">Getting Started</a>
+              <a href="allgemein_doku.htm" class="btn btn-default"role="button">Getting Started</a>
            </div>
          <div style="height:10vh;">
          </div>
@@ -100,20 +82,22 @@
          </div>
       <div class="row" style="text-align: center;">
         <div class="col-lg-4">
-          <img class="img-circle" src="bilder/list_1.png" alt="Generisches Platzhalter-Bild" width="140" height="105">
-          <h2>Bestellungen API</h2>
+          <img class="img-circle" src="bilder/list_1.png" alt="Generisches Platzhalter-Bild" width="140" height="80">
+          <h2>Bestellung API</h2>
           <p>
-            <b>Bestellungen abrufen</b> zur automatischen Anlage von entsprechenden Aufträgen.<br>
-            <b>Bestellungen beantworten</b> zum Akzeptieren oder Ablehnen von Bestellungen.
+            <b>Bestellung abrufen</b> zur automatischen Anlage von entsprechenden Aufträgen.<br>
+            <b>Bestellung beantworten</b> zum Akzeptieren oder Ablehnen von Bestellungen.
           </p>
           <p><a class="btn btn-default" href="bestellung_doku.htm" role="button">Mehr erfahren »</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle" src="bilder/car_1.png" alt="Generisches Platzhalter-Bild" width="140" height="80">
-          <h2>Leistungen API</h2>
+          <h2>Leistung API</h2>
           <p>
             <b>Leistungsdaten senden</b> um den Rückmeldeprozess zu automatisieren.
           </p>
+          <br>
+          <br>
           <p><a class="btn btn-default" href="leistung_doku.htm" role="button">Mehr erfahren »</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
@@ -122,6 +106,8 @@
           <p>
             <b>Stammdaten mappen</b> um eine Beziehung zwischen Ihren und Interserohs Stammdaten herzustellen.
           </p>
+          <br>
+          <br>
           <p><a class="btn btn-default" href="stammdaten_doku.htm" role="button">Mehr erfahren »</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
@@ -150,11 +136,33 @@
     <!-- Bootstrap-JavaScript
     ================================================== -->
     <!-- Am Ende des Dokuments platziert, damit Seiten schneller laden -->
-    <script src="doku-Dateien/jquery.js"></script>
-    <script src="doku-Dateien/bootstrap.js"></script>
-    <script src="doku-Dateien/docs.js"></script>
+    <script src="bootstrap/js/jquery.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="bootstrap/js/docs.js"></script>
     <!-- IE10-Anzeigefenster-Hack für Fehler auf Surface und Desktop-Windows-8 -->
-    <script src="doku-Dateien/ie10-viewport-bug-workaround.js"></script>
+    <script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
 
 
-<div id="global-zeroclipboard-html-bridge" class="global-zeroclipboard-container" style="position: absolute; left: 0px; top: -9999px; width: 15px; height: 15px; z-index: 999999999;" title="" data-original-title="Copy to clipboard">      <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="global-zeroclipboard-flash-bridge" width="100%" height="100%">         <param name="movie" value="/assets/flash/ZeroClipboard.swf?noCache=1490264310461">         <param name="allowScriptAccess" value="sameDomain">         <param name="scale" value="exactfit">         <param name="loop" value="false">         <param name="menu" value="false">         <param name="quality" value="best">         <param name="bgcolor" value="#ffffff">         <param name="wmode" value="transparent">         <param name="flashvars" value="trustedOrigins=holdirbootstrap.de%2C%2F%2Fholdirbootstrap.de%2Chttp%3A%2F%2Fholdirbootstrap.de">         <embed src="doku-Dateien/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" name="global-zeroclipboard-flash-bridge" allowscriptaccess="sameDomain" allowfullscreen="false" type="application/x-shockwave-flash" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="trustedOrigins=holdirbootstrap.de%2C%2F%2Fholdirbootstrap.de%2Chttp%3A%2F%2Fholdirbootstrap.de" scale="exactfit" width="100%" height="100%">                </object></div><svg xmlns="http://www.w3.org/2000/svg" width="1140" height="500" viewBox="0 0 1140 500" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="57" style="font-weight:bold;font-size:57pt;font-family:Arial, Helvetica, Open Sans, sans-serif">DritteFolie</text></svg></body></html>
+<div id="global-zeroclipboard-html-bridge" class="global-zeroclipboard-container" style="position: absolute; left: 0px; top: -9999px; width: 15px; height: 15px; z-index: 999999999;" title="" data-original-title="Copy to clipboard">
+  <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="global-zeroclipboard-flash-bridge" width="100%" height="100%">
+    <param name="movie" value="/assets/flash/ZeroClipboard.swf?noCache=1490264310461">
+    <param name="allowScriptAccess" value="sameDomain">
+    <param name="scale" value="exactfit">
+    <param name="loop" value="false">
+    <param name="menu" value="false">
+    <param name="quality" value="best">
+    <param name="bgcolor" value="#ffffff">
+    <param name="wmode" value="transparent">
+    <param name="flashvars" value="trustedOrigins=holdirbootstrap.de%2C%2F%2Fholdirbootstrap.de%2Chttp%3A%2F%2Fholdirbootstrap.de">
+    <embed src="doku-Dateien/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" name="global-zeroclipboard-flash-bridge" allowscriptaccess="sameDomain" allowfullscreen="false" type="application/x-shockwave-flash" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="trustedOrigins=holdirbootstrap.de%2C%2F%2Fholdirbootstrap.de%2Chttp%3A%2F%2Fholdirbootstrap.de" scale="exactfit" width="100%" height="100%">
+</object>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="500" viewBox="0 0 1140 500" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;">
+  <defs>
+    <style type="text/css">
+    </style>
+  </defs>
+  <text x="0" y="57" style="font-weight:bold;font-size:57pt;font-family: Arial, Helvetica, Open Sans, sans-serif">DritteFolie</text>
+</svg>
+</body>
+</html>
