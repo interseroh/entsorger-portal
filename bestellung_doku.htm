@@ -73,11 +73,13 @@
             <div style="margin:auto;text-align:center;">
                <a href="https://www.interseroh-portal-test.com/entsorgerportal/api-docs/swagger-ui.html#/bestellung-service-controller" class="btn btn-default"role="button">Technische Dokumentation</a>
             </div>
+		<br />
       <div class="page-header">
         <h3>Mehrwert</h3>
           <p>Ein System, dass den Service <b>Interseroh Entsorger Portal Bestellung
-             API</b> konsumiert kann automatisiert Bestellungen prüfen, beantworten und daraus
+             API</b> konsumiert, kann automatisiert Bestellungen prüfen, beantworten und daraus
              Aufträge erzeugen.</p>
+		<br />
          <h3>Funktionalität</h3>
          <p>Der Service Interseroh Entsorger Portal Bestellung API kann über verschiedene Endpoints genutzt werden. Diese Endpoints sind durch Swagger dokumentiert (<a href="https://www.interseroh-portal-test.com/entsorgerportal/api-docs/swagger-ui.html#/bestellung-service-controller">Link zu Swagger</a>).
            <br>Folgende Funktionalitäten werden bereitgestellt:</p>
@@ -90,7 +92,7 @@
                 <li>ablehnen (befindet sich noch in der Umsetzung)</li>
              </ul>
            </ul>
-           <p>Der gesamte Service basiert auf dem Datenobjekt Bestellung. Das Objekt enthält Paramter und verweist auf weitere Objekte. Diese verfügen wiederum über eigene Paramter. Im folgenden werden die Objekte und Parameter erläutert:
+           <p>Der gesamte Service basiert auf dem Datenobjekt Bestellung. Das Objekt enthält Paramter und verweist auf weitere Objekte. Diese verfügen wiederum über eigene Parameter. Im folgenden werden die Objekte und Parameter erläutert:
            </p>
            <table class="table table-bordered">
            <thead>
@@ -103,7 +105,7 @@
             <tr>
               <th rowspan="6"><br>bestellung</th>
               <td></td>
-              <td>Eine Bestellung ist eine  Bedarfs&auml;u&szlig;erung verbunden mit dem Wunsch auf Leistungserbringung.</td>
+              <td>Eine Bestellung ist eine Bedarfs&auml;u&szlig;erung verbunden mit dem Wunsch auf Leistungserbringung.</td>
             </tr>
             <tr>
               <td>bestellnummer</td>
@@ -141,7 +143,7 @@
             <tr>
               <th rowspan="2">betriebsstaette</th>
               <td></td>
-              <td>Ist eine funktionale Rolle einer [Postalischen Anschrift].Die [Postalische Anschrift] ist dann [Betriebsstätte] wenn sie von einem [Geschäftspartner] betrieben wird.Beschreibung:Darf keine [Postfachadresse] sein.</td>
+              <td>Ist eine funktionale Rolle einer [Postalischen Anschrift].Die [Postalische Anschrift] ist dann [Betriebsstätte] wenn sie von einem [Geschäftspartner] betrieben wird.Beschreibung: Darf keine [Postfachadresse] sein.</td>
             </tr>
             <tr>
               <td>kennung</td>
@@ -150,7 +152,7 @@
             <tr>
               <th rowspan="3">lieferant</th>
               <td></td>
-              <td>	[Geschäftspartner], der uns [Dienstleistungen] oder ein [Handelsgut] liefert. Steht in den meisten Geschäftsvorfällen in kreditorischer Geschäftsbeziehung zur Interseroh.</td>
+              <td>[Geschäftspartner], der uns [Dienstleistungen] oder ein [Handelsgut] liefert. Steht in den meisten Geschäftsvorfällen in kreditorischer Geschäftsbeziehung zur Interseroh.</td>
             </tr>
             <tr>
               <td>nummer</td>
@@ -167,11 +169,11 @@
             </tr>
             <tr>
               <td>dokumentErforderlich</td>
-              <td>Der Vorgang kann erst fakturiert werden nachdem ein optischer Beleg eingereicht wurde. Ein optischer Beleg ist z.B.: ein PDF eines gescannten Wiegescheins.</td>
+              <td>Der Vorgang kann erst fakturiert werden nachdem ein optischer Beleg eingereicht wurde. Ein optischer Beleg ist z.B.: eine PDF-Datei eines eingescannten Wiegescheins.</td>
             </tr>
             <tr>
               <td>mitteilung</td>
-              <td>	Hier können zusätzliche Informationen hinterlegt werden. Ggf. auch direkt vom Kunden.</td>
+              <td>Hier können zusätzliche Informationen hinterlegt werden. Ggf. auch direkt vom Kunden.</td>
             </tr>
             <tr>
               <td>retrograd</td>
@@ -193,7 +195,7 @@
             <tr>
               <th rowspan="2">postalischeAnschrift</th>
               <td></td>
-              <td>	Ein um einen Adressaten erweiterte [Gebäudeadresse].</td>
+              <td>Ein um einen Adressaten erweiterte [Gebäudeadresse].</td>
             </tr>
             <tr>
               <td>adressatenname</td>
@@ -202,7 +204,7 @@
             <tr>
               <th rowspan="4">gebaeudeadresse</th>
               <td></td>
-              <td>	Ein durch eine Adressangabe (oder GPS-Koordinaten) weltweit auffindbares Grundstück. Eine Gebäudeadresse kann mehrere funktionale Rollen annehmen. Die Funktionalität wird aus Sicht des [Geschäftspartner]s bestimmt. Ohne Name, Firma.</td>
+              <td>Ein durch eine Adressangabe (oder GPS-Koordinaten) weltweit auffindbares Grundstück. Eine Gebäudeadresse kann mehrere funktionale Rollen annehmen. Die Funktionalität wird aus Sicht des [Geschäftspartner]s bestimmt. Ohne Name, Firma.</td>
             </tr>
             <tr>
               <td>ortsbezeichnung</td>
