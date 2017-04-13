@@ -76,16 +76,17 @@
        </div>
       <div class="page-header">
 
-      </div>
+      
       <h2>Allgemeine Beschreibung</h2>
       <h3>Technologien</h3>
-      <ul><b>Restful API:</b>
+	  <h4>Restful API</h4>
+      <ul>
         <li>Es wird das Programmierparadigma  REST eingesetzt.</li>
         <li><a href="https://de.wikipedia.org/wiki/Representational_State_Transfer">
           https://de.wikipedia.org/wiki/Representational_State_Transfer</a></li>
       </ul>
-      <br>
-      <ul><b>JSON:</b>
+	  <h4>JSON</h4>
+      <ul>
         <li>Es wird das Datenformat JSON eingesetzt.</li>
         <li><a href="https://de.wikipedia.org/wiki/JavaScript_Object_Notation">
           https://de.wikipedia.org/wiki/JavaScript_Object_Notation</a></li>
@@ -105,26 +106,26 @@
       <h3>Swagger</h3>
       <p>Zur technischen Dokumentation der einzelnen Services wird das Tool
         <a href="http://swagger.io/">Swagger</a> eingesetzt (<a
-        href="https://www.interseroh-portal-test.com/entsorgerportal/api-docs/swagger-ui.html#/">Link</a> zur technischen Dokumentation). 
+        href="https://www.interseroh-portal-test.com/entsorgerportal/api-docs/swagger-ui.html#/">Link</a> zur technischen Dokumentation).
 		Es liefert für jeden Service folgende Informationen:
-        <ul><b>Endpoint</b>
+		<h4>Endpoint</h4>
+        <ul>
           <li>URL</li>
           <li>HTTP Methode</li>
           <li>Funktion</li>
         </ul>
-        <br>
-        <ul><b>Request</b>
+		<h4>Request</h4>
+        <ul>
           <li>Modell</li>
           <li>DTO</li>
           <li>Parameter</li>
         </ul>
-        <br>
-        <ul><b>Response</b>
+		<h4>Response</h4>
+        <ul>
           <li>Modell</li>
           <li>Content Type</li>
           <li>HTTP Status</li>
         </ul>
-        <br>
         <p>Zusätzlich können hier über eine Oberfläche Requests an die einzelnen
           Services getestet werden.</p>
         <br>
@@ -147,7 +148,6 @@
         </ul>
         <br>
         <h4>Authorization Server</h4>
-        <h5>Location</h5>
         <ul>
           <li>Testsystem: <a href="https://www.interseroh-portal-test.com/oauth/token">https://www.interseroh-portal-test.com/oauth/token</a> </li>
           <li>Produktivsystem: <a href=" https://interseroh-portal.de/oauth/token"> https://interseroh-portal.de/oauth/token</a></li>
@@ -171,45 +171,52 @@
             <br>
             <h4>HTTP Message</h4>
             <pre>
-              <code>https://host:8443/oauth/token</code>
-              <code>POST / HTTP/1.1</code>
-              <code>Host: server.example.com</code>
-              <code>Authorization: Basic AbCdEfGhIyKlMnOpQrS==</code>
-              <code>Content-Type: application/x-www-form-urlencoded</code>
-              <code>grant_type=password&username=user&password=pass   </code>
-            </pre>
+https://host:8443/oauth/token
+POST / HTTP/1.1
+Host: server.example.com
+Authorization: Basic AbCdEfGhIyKlMnOpQrS==
+Content-Type: application/x-www-form-urlencoded
+grant_type=password&username=user&password=pass
+</pre>
             <br>
             <h4>CURL-Befehl</h4>
-            <pre><code>curl -H "Authorization: Basic AbCdEfGhIyKlMnOpQrS==" --form"grant_type=password" --form "username=user" --form "password=pass"https://host/oauth/toke</code>
-           </pre>
+            <pre><code>curl -H "Authorization: Basic AbCdEfGhIyKlMnOpQrS==" --form"grant_type=password" --form "username=user" --form "password=pass"https://host/oauth/toke</code></pre>
            <br>
            <h4>Antwort mit Access Token</h4>
            <pre>
-             <code>HTTP/1.1 200 OK </code>
-             <code>Content-Type: application/json;charset=UTF-8 </code>
-             <code>Cache-Control: no-store </code>
-             <code>Pragma: no-cache</code>
-             <code>{ </code>
-             <code> "access_token":"feefdae9-61ef-434a-8e0c-85eab2dcb02a", </code>
-             <code> "token_type":"bearer", </code>
-             <code>"expires_in":1800, </code>
-             <code>"refresh_token":"a7d6d617-cc39-4379-bceb-55cc4a3a8412" </code>
-             <code>} </code>
-           </pre>
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Cache-Control: no-store
+Pragma: no-cache
+{
+  "access_token":"feefdae9-61ef-434a-8e0c-85eab2dcb02a",
+  "token_type":"bearer",
+  "expires_in":1800,
+  "refresh_token":"a7d6d617-cc39-4379-bceb-55cc4a3a8412"
+}
+</pre>
            <br>
            <h4>Parameter</h4>
            <p>Die Bedeutung der einzelnen Parameter sind in der Spezifiktaon (siehe Quellen) beschrieben.</p>
          <h4>Antwort mit Error</h4>
          <pre>
-           <code>{</code>
-           <code>"status":401,</code>
-           <code> "error":"Unauthorized",</code>
-           <code> "message":"Error description ...",</code>
-           <code>"path":"/oauth/token"</code>
-           <code>}</code>
-         </pre>
+{
+  "status":401,
+  "error":"Unauthorized",
+  "message":"Error description ...",
+  "path":"/oauth/token"
+}
+</pre>
          <br>
+		 </div>
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Zurück nach oben</a></p>
+        <p>© 2017 <a href="http://www.interseroh.de">Interseroh</a>  · <a href="#">Datenschutz</a> · <a href="#">AGB</a> · <a href="http://www.github.com" target="_blank">GitHub</a> · <a href="https://twitter.com/hashtag/interseroh" target="_blank">Twitter</a> · <a href="https://www.facebook.com/Interseroh/" target="_blank"> Facebook</a> </p>
+      </footer>
+		 
     </div> <!-- /container -->
+
     <!-- Bootstrap-JavaScript
     ================================================== -->
     <!-- Am Ende des Dokuments platziert, damit Seiten schneller laden -->
