@@ -73,13 +73,13 @@
 	  <h4>Restful API</h4>
       <ul>
         <li>Es wird das Programmierparadigma  REST eingesetzt.</li>
-        <li><a href="https://de.wikipedia.org/wiki/Representational_State_Transfer">
+        <li><a target="_blank" href="https://de.wikipedia.org/wiki/Representational_State_Transfer">
           https://de.wikipedia.org/wiki/Representational_State_Transfer</a></li>
       </ul>
 	  <h4>JSON</h4>
       <ul>
         <li>Es wird das Datenformat JSON eingesetzt.</li>
-        <li><a href="https://de.wikipedia.org/wiki/JavaScript_Object_Notation">
+        <li><a target="_blank" href="https://de.wikipedia.org/wiki/JavaScript_Object_Notation">
           https://de.wikipedia.org/wiki/JavaScript_Object_Notation</a></li>
       </ul>
       <br>
@@ -96,8 +96,8 @@
          <br />
       <h3>Swagger</h3>
       <p>Zur technischen Dokumentation der einzelnen Services wird das Tool
-        <a href="http://swagger.io/">Swagger</a> eingesetzt (<a
-        href="https://www.interseroh-portal-test.com/entsorgerportal/swagger/swagger-ui.html">Link</a> zur technischen Dokumentation).
+        <a target="_blank" href="http://swagger.io/">Swagger</a> eingesetzt (<a target="_blank"
+              href="https://www.interseroh-portal-test.com/entsorgerportal/swagger/swagger-ui.html">Link</a> zur technischen Dokumentation).
 		Es liefert für jeden Service folgende Informationen:
 		<h4>Endpoint</h4>
         <ul>
@@ -130,18 +130,20 @@
          <p>Die Authentifizierung erfolgt nach dem Authorization Framework
              OAuth2 (siehe Quellen). Jeder Servicerequest muss durch ein
              entsprechendes Access Token authentifiziert werden. Ein solches
-             Token wird über einen Authorization Server bereitgestellt.</p>
+             Token wird über einen Authorization Server bereitgestellt. Es
+             wird JWT Token verwendet.</p>
         <br>
         <h4>Quellen</h4>
         <ul>
-          <li>Spezifikationen: <a href=" https://tools.ietf.org/html/rfc6749">https://tools.ietf.org/html/rfc6749</a>  </li>
-          <li>Beschreibung:  <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2">https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2</a></li>
+          <li>Spezifikationen: <a target="_blank" href=" https://tools.ietf.org/html/rfc6749">https://tools.ietf.org/html/rfc6749</a>  </li>
+          <li>Beschreibung:  <a target="_blank" href="https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2">https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2</a></li>
+          <li>JWT Token: <a target="_blank" href="https://jwt.io">https://jwt.io</a> </li>
         </ul>
         <br>
         <h4>Authorization Server</h4>
         <ul>
-          <li>Testsystem: <a href="https://www.interseroh-portal-test.com/oauth/token">https://www.interseroh-portal-test.com/oauth/token</a> </li>
-          <li>Produktivsystem: <a href=" https://interseroh-portal.de/oauth/token"> https://interseroh-portal.de/oauth/token</a></li>
+          <li>Testsystem: <a target="_blank" href="https://www.interseroh-portal-test.com/openid-connect-server-webapp/token">https://www.interseroh-portal-test.com/openid-connect-server-webapp/token</a> </li>
+          <li>Produktivsystem: <a target="_blank" href=" https://interseroh-portal.de/openid-connect-server-webapp/token"> https://interseroh-portal.de/openid-connect-server-webapp/token</a></li>
         </ul>
         <br>
         <h4>Credentials</h4>
@@ -149,29 +151,28 @@
           client_id und client_secret mitgeteilt. Sie werden benötigt um ein
           Access Token anzufordern. Sie werden in Form eines Authorization Header
            übertragen. Dieser Header wird wie folgt erzeugt:</p>
-           <br>
            <ul>
-             <li>'Authorization: Basic ' + Base64(<code>client_id</code> + ':' + <code>client_secret</code>)</li>
+             <li>'Authorization: Basic ' + Base64(<code>client_id</code> + ':' + <code>client_secret</code>)
+             <li>Zum kodieren in Base64 kann beispielsweise diese Seite verwendet werden: <a target="_blank" href="https://www.base64encode.org">https://www.base64encode.org</a></li>
              <li>z.B.: <code>Authorization: Basic AbCdEfGhIyKlMnOpQrS== </code></li>
            </ul>
-           <p> <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>Zusätzlich muss ein <code>username</code> und ein <code>password</code> als Paramter übermittelt werden. Auch diese Daten erhält ein potentieller API Consumer im Zuge der Registrierung.</p>
            <br>
            <h4>Anfrage Access Token</h4>
            <h5>Authorization Grant</h5>
-           <p>Es wird der Authorization Grant <b>Resource Owner Password Credentials</b> verwendet. </P>
+           <p>Es wird der Authorization Grant <b>Client Credentials</b> verwendet. </P>
             <br>
             <h4>HTTP Message</h4>
             <pre>
-https://host:8443/oauth/token
+https://server.example.com/openid-connect-server-webapp/token
 POST / HTTP/1.1
 Host: server.example.com
 Authorization: Basic AbCdEfGhIyKlMnOpQrS==
 Content-Type: application/x-www-form-urlencoded
-grant_type=password&username=user&password=pass
+grant_type=client_credentials
 </pre>
             <br>
             <h4>CURL-Befehl</h4>
-            <pre><code>curl -H "Authorization: Basic AbCdEfGhIyKlMnOpQrS==" --form"grant_type=password" --form "username=user" --form "password=pass"https://host/oauth/toke</code></pre>
+            <pre><code>curl -XPOST -u [ClientId]:[ClientSecret] https://interseroh-portal-test.com/openid-connect-server-webapp/token -d "grant_type=client_credentials"</code></pre>
            <br>
            <h4>Antwort mit Access Token</h4>
            <pre>
@@ -183,7 +184,6 @@ Pragma: no-cache
   "access_token":"feefdae9-61ef-434a-8e0c-85eab2dcb02a",
   "token_type":"bearer",
   "expires_in":1800,
-  "refresh_token":"a7d6d617-cc39-4379-bceb-55cc4a3a8412"
 }
 </pre>
            <br>
@@ -195,7 +195,7 @@ Pragma: no-cache
   "status":401,
   "error":"Unauthorized",
   "message":"Error description ...",
-  "path":"/oauth/token"
+  "path":"/openid-connect-server-webapp/token"
 }
 </pre>
          <br>
