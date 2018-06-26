@@ -11,8 +11,10 @@
   <meta name="author" content="">
   <link rel="icon" href="favicon.png">
   <title>Entsorgerportal API</title>
-  <!-- Bootstrap-Interseroh-CSS -->
+  <!-- Bootstrap-CSS -->
   <link href="css/interseroh-bootstrap.css" rel="stylesheet">
+  <!-- Bootstrap-Theme -->
+  <!-- Besondere Stile für diese Vorlage -->
   <!-- Nur für Testzwecke. Kopiere diese Zeilen nicht in echte Projekte! -->
   <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
   <script src="bootstrap/js/ie-emulation-modes-warning.js"></script>
@@ -54,10 +56,10 @@
                 <li>
                   <a href="bestellung_doku.htm">Bestellung-Leistung API</a>
                 </li>
-                <li class="active">
+                <li>
                   <a href="stammdaten_doku.htm">Stammdaten API</a>
                 </li>
-                <li>
+                <li class="active">
                   <a href="abrechnung_doku.htm">Abrechnung API</a>
                 </li>
               </ul>
@@ -79,32 +81,27 @@
 
     <div style="text-align: center" class="jumbotron">
       <h1>Interseroh EntsorgerPortal</h1>
-      <h2>Stammdaten API</h2>
+      <h2>Abrechnung API</h2>
+    </div>
+    <h2>Beschreibung</h2>
+    <p>Interseroh EntsorgerPortal Abrechnung API ermöglicht das Einsehen in die Abrechnungen des Lieferanten.</p>
+    <div style="margin-top:50px;margin-bottom:50px;text-align:center;">
+      <a href="https://www.interseroh-portal-test.com/entsorgerportal/swagger/swagger-ui.html" class="btn btn-default" role="button">Technische Dokumentation</a>
     </div>
     <div class="page-header">
-
-      <h2>Beschreibung</h2>
-      <p>Interseroh EntsorgerPortal Stammdaten API ermöglicht das Einsehen in die Stammdaten eines Entsorgungspartners von Interseroh.</p>
-      <div style="margin-top:50px;margin-bottom:50px;text-align:center;">
-        <a href="https://www.interseroh-portal-test.com/entsorgerportal/swagger/swagger-ui.html#/stammdaten-service-controller" class="btn btn-default"
-          role="button">Technische Dokumentation</a>
-      </div>
       <h3>Mehrwert</h3>
-      <p>Ein System, das den Service
-        <b>Interseroh EntsorgerPortal Stammdaten API
-        </b> konsumiert, kann direkt auf die Stammdaten zugreifen, die Interseroh bereitstellt.</p>
-      <br />
+      <p>Durch die Nutzung der Abrechnung API werden die Abrechnungen für den Lieferanten direkt verfügbar und nachvollziehbar.
+        Außerdem ist ein Export im praktischen Excel Format möglich.
+      </p>
       <h3>Funktionalität</h3>
-      <p>Der Service Interseroh EntsorgerPortal Stammdaten API kann über verschiedene Endpoints genutzt werden. Diese Endpoints
+      <p>Der Service Interseroh EntsorgerPortal Abrechnung API kann über verschiedene Endpoints genutzt werden. Diese Endpoints
         sind durch Swagger dokumentiert (
-        <a href="https://www.interseroh-portal-test.com/entsorgerportal/swagger/swagger-ui.html#/stammdaten-service-controller">Link zu Swagger</a>).
+        <a href="https://www.interseroh-portal-test.com/entsorgerportal/swagger/swagger-ui.html#/abrechnung-service-controller" target="_blank">Link zu Swagger</a>).
         <br>Folgende Funktionalitäten werden bereitgestellt:</p>
       <ul>
-        <li>Betriebsstätten einsehen.</li>
+        <li>Bereitstellung der Abrechnungsdaten.</li>
+        <li>Bereitstellung der Abrechnungsdaten im Excel-Format</li>
       </ul>
-      <p>Das Objekt Stammdaten enthält Paramter und verweist auf weitere Objekte. Diese verfügen wiederum über eigene Parameter.
-        Im folgenden werden die Objekte und Parameter erläutert:
-      </p>
       <table class="table table-bordered">
         <thead>
           <tr>
@@ -114,84 +111,56 @@
           </tr>
         </thead>
         <tr>
-          <th rowspan="5">betriebsstaette</th>
+          <th rowspan="12">
+            <br>abrechnung</th>
           <td></td>
-          <td>Eine Betriebsstätte ist ein Ort der Unternehmenstätigkeit.</td>
+          <td>Die abschließende Rechnung nach einer erfolgreichen Leistungsmeldung </td>
         </tr>
         <tr>
-          <td>id</td>
-          <td>Die Identifizierungsnummer der Betriebsstätte.</td>
+          <td>abrechnungsmonat</td>
+          <td>Der Monat der Abrechnung</td>
         </tr>
         <tr>
-          <td>kennung</td>
-          <td>Die jeweilige Kennung der Betriebsstätte.</td>
+          <td>artikelBeschreibung</td>
+          <td>Der abgerechnete Artikel</td>
         </tr>
         <tr>
-          <td>gueltigBis</td>
-          <td>Das Ablaufdatum des Betriebsstätten-Eintrages.</td>
+          <td>belegNummer</td>
+          <td>Die Nummer des dazugehörigen Belegs</td>
         </tr>
         <tr>
-          <td>uniqueKey</td>
-          <td>Ein eindeutiger, technischer Identifizierer der Betriebsstättes.</td>
+          <td>bruttoBetrag</td>
+          <td>Der Brutto-Betrag der Abrechnung</td>
         </tr>
         <tr>
-          <th rowspan="2">
-            <br>postalische Anschrift</th>
-          <td></td>
-          <td>Die postalische Anschrift der Betriebsstätte</td>
+          <td>leistungsMonat</td>
+          <td>Der Monat der gemeldeten Leistung</td>
         </tr>
         <tr>
-          <td>adressatenname</td>
-          <td>Der Name der Betriebsstätte</td>
+          <td>lieferscheinNummer</td>
+          <td>Die Nummer des Lieferscheines</td>
         </tr>
         <tr>
-          <th rowspan="5">
-            <br>gebaeudeadresse</th>
-          <td></td>
-          <td>Die postalische Anschrift des Betriebsstätten-Gebäudes</td>
+          <td>masseinheit</td>
+          <td>Die Einheit, in der die Menge gemessen wird</td>
         </tr>
         <tr>
-          <td>strassennahme</td>
-          <td>Der Name der Straße der Betriebsstätte</td>
+          <td>nettoBetrag</td>
+          <td>Der Netto-Betrag der Abrechnung</td>
         </tr>
         <tr>
-          <td>postleitzahl</td>
-          <td>Die Postleitzahl der Betriebsstätte</td>
+          <td>position</td>
+          <td>Die Nummer der Abrechnungsposition</td>
         </tr>
         <tr>
-          <td>ortsbezeichnung</td>
-          <td>Der Ortname der Betriebsstätte</td>
+          <td>positionId</td>
+          <td>Die Identifizierungsnummer der Position</td>
         </tr>
         <tr>
-          <td>land</td>
-          <td>Das Bundesland der Betriebsstätte</td>
+          <td>positionMenge</td>
+          <td>Die Menge der Abrechnungsposition</td>
         </tr>
-        <tr>
-          <th rowspan="6">
-            <br>lieferant</th>
-          <td></td>
-          <td>Der Lieferant für den Stammdaten angefragt werden</td>
-        </tr>
-        <tr>
-          <td>id</td>
-          <td>Die Identifizierungsnummer des Lieferanten.</td>
-        </tr>
-        <tr>
-          <td>nummer</td>
-          <td>Die Nummer des Lieferanten.</td>
-        </tr>
-        <tr>
-          <td>gueltigVon</td>
-          <td>Der Beginn der Gültigkeit des Stammdaten-Eintrages</td>
-        </tr>
-        <tr>
-          <td>gueltigBis</td>
-          <td>Das Ende der Gültigkeit des Stammdaten-Eintrages</td>
-        </tr>
-        <tr>
-          <td>name</td>
-          <td>Der Name des Lieferanten</td>
-        </tr>
+
       </table>
     </div>
     <!-- FOOTER -->
@@ -215,7 +184,7 @@
   <script src="bootstrap/js/bootstrap.js"></script>
   <script src="bootstrap/js/docs.js"></script>
   <!-- IE10-Anzeigefenster-Hack für Fehler auf Surface und Desktop-Windows-8 -->
-  <script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+  <script src="doku-Dateien/ie10-viewport-bug-workaround.js"></script>
   <div id="global-zeroclipboard-html-bridge" class="global-zeroclipboard-container" style="position: absolute; left: 0px; top: -9999px; width: 15px; height: 15px; z-index: 999999999;"
     title="" data-original-title="Copy to clipboard">
     <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="global-zeroclipboard-flash-bridge" width="100%" height="100%">
